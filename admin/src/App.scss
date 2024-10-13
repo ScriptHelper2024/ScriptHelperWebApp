@@ -1,0 +1,15 @@
+@import './styles/global.scss';
+
+html,
+body,
+#root {
+	padding: 0;
+	margin: 0;
+}
+
+.App {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: stretch;
+}

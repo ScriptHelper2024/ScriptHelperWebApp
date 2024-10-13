@@ -1,0 +1,37 @@
+@import '../../styles/global.scss';
+
+.ModalDialog {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	padding: 1em 0;
+	&.open {
+		display: flex;
+	}
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: $off-white;
+		opacity: 0.5;
+		width: 100%;
+		height: 100%;
+	}
+	.content {
+		position: relative;
+		min-width: 400px;
+		max-width: 100%;
+		max-height: 100%;
+		overflow-y: auto;
+		background-color: $off-white;
+		border-radius: 0.25em;
+		@include standard-box-shadow;
+		padding: 1em 2em;
+	}
+}

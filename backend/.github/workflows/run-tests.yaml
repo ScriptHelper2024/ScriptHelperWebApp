@@ -1,0 +1,35 @@
+name: "Run Python Tests"
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install pip dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Create .env
+      run: |
+        cp .env.example .env
+        echo "APP_PATH=/home/runner/work/sh-backend/sh-backend" >> .env
+        echo "JWT_SECRET_KEY=secret" >> .env
+
+    - name: Execute unittest.sh script
+      run: |
+        chmod +x ./src/unittest.sh
+        ./src/unittest.sh

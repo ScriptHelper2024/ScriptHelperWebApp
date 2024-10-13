@@ -1,0 +1,101 @@
+@import '../../styles/global.scss';
+
+.RecordsTable {
+	.react-resizable {
+		position: relative;
+		&:after {
+			content: '';
+			width: 100%;
+			border-bottom: thin solid $theme-dark-color;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		.react-resizable-handle-s {
+			bottom: -0.5em;
+		}
+	}
+
+	table {
+		display: grid;
+		position: relative;
+		grid-template-rows: minmax(2em, 2em);
+		width: 100%;
+		overflow-y: auto;
+		background-color: $off-white;
+		line-height: 1;
+		> thead {
+			display: contents;
+			tr {
+				display: contents;
+				top: 0;
+				left: 0;
+				th {
+					position: sticky;
+					top: 0;
+					z-index: 2;
+					text-align: left;
+					padding: 0 0.25em;
+					background-color: $off-white;
+				}
+			}
+		}
+
+		> tbody {
+			display: contents;
+			> tr {
+				display: contents;
+				td.message {
+					justify-content: center;
+				}
+				&:nth-child(odd) td {
+					background-color: $theme-dark-color-muted;
+				}
+				> td {
+					display: flex;
+					align-items: first baseline;
+					min-height: 2em;
+					padding: 0.5em 0.25em;
+					overflow-x: hidden;
+					overflow-y: auto;
+					max-height: 5em;
+
+					white-space: normal;
+					&.overflow {
+						position: relative;
+						&:after {
+							content: '...';
+							position: absolute;
+							right: 0;
+							bottom: 0.125em;
+						}
+						&:hover:after {
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+		> tfoot {
+			display: contents;
+			tr {
+				display: contents;
+				td {
+					position: sticky;
+					top: 0;
+					z-index: 2;
+					text-align: left;
+					padding: 0 0.25em;
+					background-color: $off-white;
+					> div {
+						width: 100%;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+					}
+				}
+			}
+		}
+	}
+}

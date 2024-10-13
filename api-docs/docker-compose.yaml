@@ -1,0 +1,17 @@
+ version: '3.3'
+
+ services:
+   sh-api-docs:
+     build: .
+     container_name: sh-api-docs
+     environment:
+       - VIRTUAL_HOST=${VIRTUAL_HOST}
+       - VIRTUAL_PORT=80
+     networks:
+       - default
+     restart: always
+
+ networks:
+   default:
+     external:
+       name: ${NETWORK_NAME}

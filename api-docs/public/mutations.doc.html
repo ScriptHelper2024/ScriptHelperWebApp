@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
+    <title>Mutations</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
+</head>
+<body class="slds-scrollable--y">
+    <nav class="slds-grid slds-grid--vertical slds-col--rule-right">
+        <header class="slds-p-around--medium slds-col slds-shrik slds-grow-none">
+            <button class="slds-button slds-button--icon slds-float--right js-toggle-navigation less-than-medium">
+                <i class="material-icons">close</i>
+            </button>
+                <h3 class="slds-text-heading--medium"><a href="./">GraphQL Schema</a></h3>
+            <div class="slds-p-top--small">
+                <input id="type-search" type="text" placeholder="Search a type" autofocus="" class="slds-input" />
+            </div>
+        </header>
+        <div id="navication-scroll" class="slds-scrollable--y slds-col slds-grow">
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Schema</h4>
+    <ul>
+        <li  title="Query">
+            <a href="query.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Query
+            </a>
+        </li>
+        <li class="slds-is-active" title="Mutations">
+            <a href="mutations.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Mutations
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Scalars</h4>
+    <ul>
+        <li  title="Boolean">
+            <a href="boolean.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Boolean
+            </a>
+        </li>
+        <li  title="DateTime">
+            <a href="datetime.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DateTime
+            </a>
+        </li>
+        <li  title="DynamicValue">
+            <a href="dynamicvalue.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DynamicValue
+            </a>
+        </li>
+        <li  title="Float">
+            <a href="float.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Float
+            </a>
+        </li>
+        <li  title="GenericScalar">
+            <a href="genericscalar.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenericScalar
+            </a>
+        </li>
+        <li  title="ID">
+            <a href="id.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ID
+            </a>
+        </li>
+        <li  title="Int">
+            <a href="int.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Int
+            </a>
+        </li>
+        <li  title="JSONString">
+            <a href="jsonstring.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                JSONString
+            </a>
+        </li>
+        <li  title="String">
+            <a href="string.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                String
+            </a>
+        </li>
+        <li  title="UUID">
+            <a href="uuid.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UUID
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Enums</h4>
+    <ul>
+        <li  title="__DirectiveLocation">
+            <a href="directivelocation.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __DirectiveLocation
+            </a>
+        </li>
+        <li  title="__TypeKind">
+            <a href="typekind.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __TypeKind
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Objects</h4>
+    <ul>
+        <li  title="AgentTask">
+            <a href="agenttask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgentTask
+            </a>
+        </li>
+        <li  title="AgentTasksList">
+            <a href="agenttaskslist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgentTasksList
+            </a>
+        </li>
+        <li  title="AgentTasksStatistics">
+            <a href="agenttasksstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AgentTasksStatistics
+            </a>
+        </li>
+        <li  title="AllAuthorStyles">
+            <a href="allauthorstyles.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllAuthorStyles
+            </a>
+        </li>
+        <li  title="AllAuthorStylesStatistics">
+            <a href="allauthorstylesstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllAuthorStylesStatistics
+            </a>
+        </li>
+        <li  title="AllPromptTemplates">
+            <a href="allprompttemplates.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllPromptTemplates
+            </a>
+        </li>
+        <li  title="AllScriptDialogFlavors">
+            <a href="allscriptdialogflavors.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllScriptDialogFlavors
+            </a>
+        </li>
+        <li  title="AllScriptDialogFlavorStatistics">
+            <a href="allscriptdialogflavorstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllScriptDialogFlavorStatistics
+            </a>
+        </li>
+        <li  title="AllStatistics">
+            <a href="allstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllStatistics
+            </a>
+        </li>
+        <li  title="AllStyleGuidelines">
+            <a href="allstyleguidelines.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllStyleGuidelines
+            </a>
+        </li>
+        <li  title="AllStyleGuidelinesStatistics">
+            <a href="allstyleguidelinesstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllStyleGuidelinesStatistics
+            </a>
+        </li>
+        <li  title="AllSubscriptions">
+            <a href="allsubscriptions.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AllSubscriptions
+            </a>
+        </li>
+        <li  title="ApplySuggestion">
+            <a href="applysuggestion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ApplySuggestion
+            </a>
+        </li>
+        <li  title="ArchiveProject">
+            <a href="archiveproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ArchiveProject
+            </a>
+        </li>
+        <li  title="AuthorStyle">
+            <a href="authorstyle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AuthorStyle
+            </a>
+        </li>
+        <li  title="BeatSheet">
+            <a href="beatsheet.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BeatSheet
+            </a>
+        </li>
+        <li  title="CharacterProfile">
+            <a href="characterprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CharacterProfile
+            </a>
+        </li>
+        <li  title="CloneProject">
+            <a href="cloneproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CloneProject
+            </a>
+        </li>
+        <li  title="CollateProject">
+            <a href="collateproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CollateProject
+            </a>
+        </li>
+        <li  title="CreateCharacterProfile">
+            <a href="createcharacterprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateCharacterProfile
+            </a>
+        </li>
+        <li  title="CreateLocationProfile">
+            <a href="createlocationprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateLocationProfile
+            </a>
+        </li>
+        <li  title="CreateMagicNoteCritic">
+            <a href="createmagicnotecritic.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateMagicNoteCritic
+            </a>
+        </li>
+        <li  title="CreateProject">
+            <a href="createproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateProject
+            </a>
+        </li>
+        <li  title="CreateSceneText">
+            <a href="createscenetext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateSceneText
+            </a>
+        </li>
+        <li  title="CreateSuggestion">
+            <a href="createsuggestion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                CreateSuggestion
+            </a>
+        </li>
+        <li  title="DefaultLlmOptions">
+            <a href="defaultllmoptions.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DefaultLlmOptions
+            </a>
+        </li>
+        <li  title="DeleteAgentTask">
+            <a href="deleteagenttask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteAgentTask
+            </a>
+        </li>
+        <li  title="DeleteAllSuggestions">
+            <a href="deleteallsuggestions.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteAllSuggestions
+            </a>
+        </li>
+        <li  title="DeleteCharacterByKey">
+            <a href="deletecharacterbykey.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteCharacterByKey
+            </a>
+        </li>
+        <li  title="DeleteLocationByKey">
+            <a href="deletelocationbykey.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteLocationByKey
+            </a>
+        </li>
+        <li  title="DeleteMagicNoteCritic">
+            <a href="deletemagicnotecritic.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteMagicNoteCritic
+            </a>
+        </li>
+        <li  title="DeleteSceneByKey">
+            <a href="deletescenebykey.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteSceneByKey
+            </a>
+        </li>
+        <li  title="DeleteSuggestion">
+            <a href="deletesuggestion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                DeleteSuggestion
+            </a>
+        </li>
+        <li  title="FinalizeSocialLoginMutation">
+            <a href="finalizesocialloginmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                FinalizeSocialLoginMutation
+            </a>
+        </li>
+        <li  title="GenerateBeatSheetFromScene">
+            <a href="generatebeatsheetfromscene.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateBeatSheetFromScene
+            </a>
+        </li>
+        <li  title="GenerateBeatSheetWithNotes">
+            <a href="generatebeatsheetwithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateBeatSheetWithNotes
+            </a>
+        </li>
+        <li  title="GenerateCharacterFromSeed">
+            <a href="generatecharacterfromseed.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateCharacterFromSeed
+            </a>
+        </li>
+        <li  title="GenerateCharacterWithNotes">
+            <a href="generatecharacterwithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateCharacterWithNotes
+            </a>
+        </li>
+        <li  title="GenerateExpansiveNotes">
+            <a href="generateexpansivenotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateExpansiveNotes
+            </a>
+        </li>
+        <li  title="GenerateLocationFromSeed">
+            <a href="generatelocationfromseed.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateLocationFromSeed
+            </a>
+        </li>
+        <li  title="GenerateLocationWithNotes">
+            <a href="generatelocationwithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateLocationWithNotes
+            </a>
+        </li>
+        <li  title="GenerateMagicNotes">
+            <a href="generatemagicnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateMagicNotes
+            </a>
+        </li>
+        <li  title="GenerateMakeScenes">
+            <a href="generatemakescenes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateMakeScenes
+            </a>
+        </li>
+        <li  title="GenerateSceneFromSeed">
+            <a href="generatescenefromseed.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateSceneFromSeed
+            </a>
+        </li>
+        <li  title="GenerateSceneWithNotes">
+            <a href="generatescenewithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateSceneWithNotes
+            </a>
+        </li>
+        <li  title="GenerateScriptAndBeatSheet">
+            <a href="generatescriptandbeatsheet.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateScriptAndBeatSheet
+            </a>
+        </li>
+        <li  title="GenerateScriptTextFromScene">
+            <a href="generatescripttextfromscene.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateScriptTextFromScene
+            </a>
+        </li>
+        <li  title="GenerateScriptTextWithNotes">
+            <a href="generatescripttextwithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateScriptTextWithNotes
+            </a>
+        </li>
+        <li  title="GenerateStoryFromSeed">
+            <a href="generatestoryfromseed.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateStoryFromSeed
+            </a>
+        </li>
+        <li  title="GenerateStoryWithNotes">
+            <a href="generatestorywithnotes.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateStoryWithNotes
+            </a>
+        </li>
+        <li  title="GenerateSuggestion">
+            <a href="generatesuggestion.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                GenerateSuggestion
+            </a>
+        </li>
+        <li  title="HealthCheck">
+            <a href="healthcheck.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                HealthCheck
+            </a>
+        </li>
+        <li  title="Invoice">
+            <a href="invoice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Invoice
+            </a>
+        </li>
+        <li  title="InvoiceEvent">
+            <a href="invoiceevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                InvoiceEvent
+            </a>
+        </li>
+        <li  title="LineItem">
+            <a href="lineitem.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LineItem
+            </a>
+        </li>
+        <li  title="LocationProfile">
+            <a href="locationprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LocationProfile
+            </a>
+        </li>
+        <li  title="LoginMutation">
+            <a href="loginmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LoginMutation
+            </a>
+        </li>
+        <li  title="LogoutMutation">
+            <a href="logoutmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                LogoutMutation
+            </a>
+        </li>
+        <li  title="MagicNoteCritic">
+            <a href="magicnotecritic.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                MagicNoteCritic
+            </a>
+        </li>
+        <li  title="MagicNoteCriticsStatistics">
+            <a href="magicnotecriticsstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                MagicNoteCriticsStatistics
+            </a>
+        </li>
+        <li  title="MagicNotesCriticsPagedWithStatistics">
+            <a href="magicnotescriticspagedwithstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                MagicNotesCriticsPagedWithStatistics
+            </a>
+        </li>
+        <li  title="PagedAgentTasks">
+            <a href="pagedagenttasks.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PagedAgentTasks
+            </a>
+        </li>
+        <li  title="PagedInvoices">
+            <a href="pagedinvoices.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PagedInvoices
+            </a>
+        </li>
+        <li  title="PasswordResetMutation">
+            <a href="passwordresetmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PasswordResetMutation
+            </a>
+        </li>
+        <li  title="PasswordResetRequestMutation">
+            <a href="passwordresetrequestmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PasswordResetRequestMutation
+            </a>
+        </li>
+        <li  title="PaymentIntent">
+            <a href="paymentintent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PaymentIntent
+            </a>
+        </li>
+        <li  title="PlatformSetting">
+            <a href="platformsetting.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PlatformSetting
+            </a>
+        </li>
+        <li  title="PlatformStats">
+            <a href="platformstats.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PlatformStats
+            </a>
+        </li>
+        <li  title="Project">
+            <a href="project.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Project
+            </a>
+        </li>
+        <li  title="PromptTemplate">
+            <a href="prompttemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PromptTemplate
+            </a>
+        </li>
+        <li  title="PromptTemplateStatistics">
+            <a href="prompttemplatestatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                PromptTemplateStatistics
+            </a>
+        </li>
+        <li  title="RebaseBeatSheet">
+            <a href="rebasebeatsheet.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseBeatSheet
+            </a>
+        </li>
+        <li  title="RebaseCharacterProfile">
+            <a href="rebasecharacterprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseCharacterProfile
+            </a>
+        </li>
+        <li  title="RebaseLocationProfile">
+            <a href="rebaselocationprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseLocationProfile
+            </a>
+        </li>
+        <li  title="RebaseSceneText">
+            <a href="rebasescenetext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseSceneText
+            </a>
+        </li>
+        <li  title="RebaseScriptText">
+            <a href="rebasescripttext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseScriptText
+            </a>
+        </li>
+        <li  title="RebaseStoryText">
+            <a href="rebasestorytext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RebaseStoryText
+            </a>
+        </li>
+        <li  title="RegisterAuthorStyle">
+            <a href="registerauthorstyle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RegisterAuthorStyle
+            </a>
+        </li>
+        <li  title="RegisterPromptTemplate">
+            <a href="registerprompttemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RegisterPromptTemplate
+            </a>
+        </li>
+        <li  title="RegisterScriptDialogFlavor">
+            <a href="registerscriptdialogflavor.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RegisterScriptDialogFlavor
+            </a>
+        </li>
+        <li  title="RegisterStyleGuideline">
+            <a href="registerstyleguideline.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RegisterStyleGuideline
+            </a>
+        </li>
+        <li  title="RegisterUser">
+            <a href="registeruser.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RegisterUser
+            </a>
+        </li>
+        <li  title="ReorderCharacter">
+            <a href="reordercharacter.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ReorderCharacter
+            </a>
+        </li>
+        <li  title="ReorderLocation">
+            <a href="reorderlocation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ReorderLocation
+            </a>
+        </li>
+        <li  title="ReorderScene">
+            <a href="reorderscene.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ReorderScene
+            </a>
+        </li>
+        <li  title="ResetAgentTask">
+            <a href="resetagenttask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ResetAgentTask
+            </a>
+        </li>
+        <li  title="RestoreProject">
+            <a href="restoreproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RestoreProject
+            </a>
+        </li>
+        <li  title="SceneText">
+            <a href="scenetext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SceneText
+            </a>
+        </li>
+        <li  title="ScriptDialogFlavor">
+            <a href="scriptdialogflavor.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ScriptDialogFlavor
+            </a>
+        </li>
+        <li  title="ScriptText">
+            <a href="scripttext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ScriptText
+            </a>
+        </li>
+        <li  title="SendEmailVerificationMutation">
+            <a href="sendemailverificationmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SendEmailVerificationMutation
+            </a>
+        </li>
+        <li  title="SetupIntentCard">
+            <a href="setupintentcard.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SetupIntentCard
+            </a>
+        </li>
+        <li  title="SocialLoginMutation">
+            <a href="socialloginmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SocialLoginMutation
+            </a>
+        </li>
+        <li  title="Statistics">
+            <a href="statistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Statistics
+            </a>
+        </li>
+        <li  title="StoryText">
+            <a href="storytext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StoryText
+            </a>
+        </li>
+        <li  title="StyleGuideline">
+            <a href="styleguideline.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                StyleGuideline
+            </a>
+        </li>
+        <li  title="Subscription">
+            <a href="subscription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Subscription
+            </a>
+        </li>
+        <li  title="SubscriptionEvent">
+            <a href="subscriptionevent.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SubscriptionEvent
+            </a>
+        </li>
+        <li  title="SubscriptionStatistics">
+            <a href="subscriptionstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SubscriptionStatistics
+            </a>
+        </li>
+        <li  title="SubscriptionTier">
+            <a href="subscriptiontier.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SubscriptionTier
+            </a>
+        </li>
+        <li  title="SuggestedStoryTitle">
+            <a href="suggestedstorytitle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                SuggestedStoryTitle
+            </a>
+        </li>
+        <li  title="UpdateAgentTask">
+            <a href="updateagenttask.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateAgentTask
+            </a>
+        </li>
+        <li  title="UpdateAuthorStyle">
+            <a href="updateauthorstyle.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateAuthorStyle
+            </a>
+        </li>
+        <li  title="UpdateBeatSheet">
+            <a href="updatebeatsheet.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateBeatSheet
+            </a>
+        </li>
+        <li  title="UpdateBeatSheetVersionLabel">
+            <a href="updatebeatsheetversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateBeatSheetVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateCharacterProfile">
+            <a href="updatecharacterprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateCharacterProfile
+            </a>
+        </li>
+        <li  title="UpdateCharacterVersionLabel">
+            <a href="updatecharacterversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateCharacterVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateInvoice">
+            <a href="updateinvoice.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateInvoice
+            </a>
+        </li>
+        <li  title="UpdateLocationProfile">
+            <a href="updatelocationprofile.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateLocationProfile
+            </a>
+        </li>
+        <li  title="UpdateLocationVersionLabel">
+            <a href="updatelocationversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateLocationVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateMagicNoteCritic">
+            <a href="updatemagicnotecritic.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateMagicNoteCritic
+            </a>
+        </li>
+        <li  title="UpdateMe">
+            <a href="updateme.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateMe
+            </a>
+        </li>
+        <li  title="UpdateMyUserPreference">
+            <a href="updatemyuserpreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateMyUserPreference
+            </a>
+        </li>
+        <li  title="UpdatePaymentMethod">
+            <a href="updatepaymentmethod.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdatePaymentMethod
+            </a>
+        </li>
+        <li  title="UpdatePlatformSetting">
+            <a href="updateplatformsetting.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdatePlatformSetting
+            </a>
+        </li>
+        <li  title="UpdateProject">
+            <a href="updateproject.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateProject
+            </a>
+        </li>
+        <li  title="UpdatePromptTemplate">
+            <a href="updateprompttemplate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdatePromptTemplate
+            </a>
+        </li>
+        <li  title="UpdateSceneText">
+            <a href="updatescenetext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateSceneText
+            </a>
+        </li>
+        <li  title="UpdateSceneVersionLabel">
+            <a href="updatesceneversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateSceneVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateScriptDialogFlavor">
+            <a href="updatescriptdialogflavor.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateScriptDialogFlavor
+            </a>
+        </li>
+        <li  title="UpdateScriptText">
+            <a href="updatescripttext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateScriptText
+            </a>
+        </li>
+        <li  title="UpdateScriptTextVersionLabel">
+            <a href="updatescripttextversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateScriptTextVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateStoryText">
+            <a href="updatestorytext.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateStoryText
+            </a>
+        </li>
+        <li  title="UpdateStoryVersionLabel">
+            <a href="updatestoryversionlabel.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateStoryVersionLabel
+            </a>
+        </li>
+        <li  title="UpdateStyleGuideline">
+            <a href="updatestyleguideline.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateStyleGuideline
+            </a>
+        </li>
+        <li  title="UpdateSubscription">
+            <a href="updatesubscription.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateSubscription
+            </a>
+        </li>
+        <li  title="UpdateUser">
+            <a href="updateuser.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateUser
+            </a>
+        </li>
+        <li  title="UpdateUserPreference">
+            <a href="updateuserpreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UpdateUserPreference
+            </a>
+        </li>
+        <li  title="User">
+            <a href="user.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                User
+            </a>
+        </li>
+        <li  title="UserPreference">
+            <a href="userpreference.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UserPreference
+            </a>
+        </li>
+        <li  title="UserStatistics">
+            <a href="userstatistics.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UserStatistics
+            </a>
+        </li>
+        <li  title="UsersWithTotalPages">
+            <a href="userswithtotalpages.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UsersWithTotalPages
+            </a>
+        </li>
+        <li  title="VerifyEmailMutation">
+            <a href="verifyemailmutation.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                VerifyEmailMutation
+            </a>
+        </li>
+        <li  title="__Directive">
+            <a href="directive.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Directive
+            </a>
+        </li>
+        <li  title="__EnumValue">
+            <a href="enumvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __EnumValue
+            </a>
+        </li>
+        <li  title="__Field">
+            <a href="field.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Field
+            </a>
+        </li>
+        <li  title="__InputValue">
+            <a href="inputvalue.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __InputValue
+            </a>
+        </li>
+        <li  title="__Schema">
+            <a href="schema.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Schema
+            </a>
+        </li>
+        <li  title="__Type">
+            <a href="type.spec.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                __Type
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Input Objects</h4>
+    <ul>
+        <li  title="ProjectMetadataInput">
+            <a href="projectmetadatainput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ProjectMetadataInput
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+    <h4 class="slds-text-title--caps slds-p-around--medium">Directives</h4>
+    <ul>
+        <li  title="deprecated">
+            <a href="deprecated.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                deprecated
+            </a>
+        </li>
+        <li  title="include">
+            <a href="include.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                include
+            </a>
+        </li>
+        <li  title="skip">
+            <a href="skip.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                skip
+            </a>
+        </li>
+        <li  title="specifiedBy">
+            <a href="specifiedby.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                specifiedBy
+            </a>
+        </li>
+    </ul>
+</div>
+        </div>
+    </nav>
+    <main><section class="title slds-theme--inverse">
+    <div class="container slds-grid">
+        <div>
+        <button class="slds-button js-toggle-navigation less-than-medium">
+            <i class="material-icons slds-button__icon slds-button__icon--left">menu</i>
+            <span class="slds-text-title--caps">Types<span>
+        </button>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">Mutations</h1>
+        <div class="slds-text-body--regular"></div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 id="graphql-schema-definition" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+            <a href="#graphql-schema-definition">
+                <i class="material-icons">link</i>
+            </a>
+            GraphQL Schema definition
+        </h2>
+        <code class="highlight"><ul class="code" style="padding-left:56px"><li><span class="keyword operator ts">type</span> <span class="identifier">Mutations</span> {</li><li></li><li><span class="tab"><span class="comment line">#   UpdateUserPreference Mutation to update a User's preference settings </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>defaultLlm</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateUserPreference</span>(<span class="meta">defaultLlm</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="updateuserpreference.doc.html">UpdateUserPreference</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateMyUserPreference Mutation to update the currently logged in User's </span></span></li><li><span class="tab"><span class="comment line">#   preference settings </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>defaultLlm</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateMyUserPreference</span>(<span class="meta">defaultLlm</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="updatemyuserpreference.doc.html">UpdateMyUserPreference</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createTitleSuggestion</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="createsuggestion.doc.html">CreateSuggestion</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>suggestionId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteTitleSuggestion</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">suggestionId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deletesuggestion.doc.html">DeleteSuggestion</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteAllTitleSuggestions</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deleteallsuggestions.doc.html">DeleteAllSuggestions</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>suggestionId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">applyTitleSuggestion</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">suggestionId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="applysuggestion.doc.html">ApplySuggestion</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateTitleSuggestion</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">storyTextId</span>: <a class="support type" href="id.doc.html">ID</a>): <a class="support type" href="generatesuggestion.doc.html">GenerateSuggestion</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>agentId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>agentResults</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>errors</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>inputTokensUsed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>outputTokensUsed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>processTime</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>status</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>statusMessage</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateAgentTask</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">agentId</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">agentResults</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">errors</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">inputTokensUsed</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">outputTokensUsed</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">processTime</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">status</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">statusMessage</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updateagenttask.doc.html">UpdateAgentTask</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteAgentTask</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deleteagenttask.doc.html">DeleteAgentTask</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">resetAgentTask</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="resetagenttask.doc.html">ResetAgentTask</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   RegisterAuthorStyle Mutation to create a new AuthorStyle</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">registerAuthorStyle</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="registerauthorstyle.doc.html">RegisterAuthorStyle</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   DeleteAuthorStyle Mutation to delete an AuthorStyle</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteAuthorStyle</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateAuthorStyle Mutation to update an Author Style's name or prompt text</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateAuthorStyle</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updateauthorstyle.doc.html">UpdateAuthorStyle</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>priceId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateSubscription</span>(<span class="meta">priceId</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="updatesubscription.doc.html">UpdateSubscription</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>country</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>phone</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>token</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updatePaymentMethod</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">country</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">phone</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">token</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="updatepaymentmethod.doc.html">UpdatePaymentMethod</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   RegisterUser Mutation to create a new User </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>firstName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>lastName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>password</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">registerUser</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">firstName</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">lastName</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">password</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="registeruser.doc.html">RegisterUser</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   DeleteUser Mutation to delete a User </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteUser</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateUser Mutation to update a User's email or password </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>firstName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>lastName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>password</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateUser</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">firstName</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">lastName</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">password</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updateuser.doc.html">UpdateUser</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateMe Mutation to update the currently logged in User's account settings </span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>firstName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>lastName</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>password</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateMe</span>(<span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">firstName</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">lastName</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">password</span>: <a class="support type" href="string.doc.html">String</a>): <a class="support type" href="updateme.doc.html">UpdateMe</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>password</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">login</span>(<span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">password</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="loginmutation.doc.html">LoginMutation</a> </span></li><li></li><li><span class="tab"><span class="meta">logout</span>: <a class="support type" href="logoutmutation.doc.html">LogoutMutation</a> </span></li><li></li><li><span class="tab"><span class="meta">sendEmailVerification</span>: <a class="support type" href="sendemailverificationmutation.doc.html">SendEmailVerificationMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>code</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">verifyEmail</span>(<span class="meta">code</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="verifyemailmutation.doc.html">VerifyEmailMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">passwordResetRequest</span>(<span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="passwordresetrequestmutation.doc.html">PasswordResetRequestMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>email</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>newPassword</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>resetCode</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">passwordReset</span>(<span class="meta">email</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">newPassword</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">resetCode</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="passwordresetmutation.doc.html">PasswordResetMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>provider</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">socialLogin</span>(<span class="meta">provider</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="socialloginmutation.doc.html">SocialLoginMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>code</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>provider</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">finalizeSocialLogin</span>(<span class="meta">code</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">provider</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="finalizesocialloginmutation.doc.html">FinalizeSocialLoginMutation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseScriptText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptTextId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="rebasescripttext.doc.html">RebaseScriptText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateScriptTextVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptTextId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatescripttextversionlabel.doc.html">UpdateScriptTextVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateScriptText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatescripttext.doc.html">UpdateScriptText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>authorStyleId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>includeBeatSheet</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>screenplayFormat</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptDialogFlavorId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>styleGuidelineId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateScriptTextFromScene</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">authorStyleId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">includeBeatSheet</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">screenplayFormat</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptDialogFlavorId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">styleGuidelineId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="generatescripttextfromscene.doc.html">GenerateScriptTextFromScene</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>authorStyleId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>includeBeatSheet</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>screenplayFormat</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptDialogFlavorId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>styleGuidelineId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateScriptTextWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">authorStyleId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">includeBeatSheet</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">screenplayFormat</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptDialogFlavorId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">styleGuidelineId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatescripttextwithnotes.doc.html">GenerateScriptTextWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>authorStyleId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>screenplayFormat</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptDialogFlavorId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>styleGuidelineId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateScriptAndBeatSheet</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">authorStyleId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">screenplayFormat</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptDialogFlavorId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">styleGuidelineId</span>: <a class="support type" href="id.doc.html">ID</a></span></span></li><li><span class="tab">): <a class="support type" href="generatescriptandbeatsheet.doc.html">GenerateScriptAndBeatSheet</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>metadata</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createProject</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">metadata</span>: <a class="support type" href="projectmetadatainput.doc.html">ProjectMetadataInput</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="createproject.doc.html">CreateProject</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>metadata</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateProject</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">metadata</span>: <a class="support type" href="projectmetadatainput.doc.html">ProjectMetadataInput</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updateproject.doc.html">UpdateProject</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">archiveProject</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="archiveproject.doc.html">ArchiveProject</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">restoreProject</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="restoreproject.doc.html">RestoreProject</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">cloneProject</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="cloneproject.doc.html">CloneProject</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationOrderAfter</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createLocationProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">locationOrderAfter</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="createlocationprofile.doc.html">CreateLocationProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>newLocationOrder</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">reorderLocation</span>(<span class="meta">newLocationOrder</span>: <a class="support type" href="int.doc.html">Int</a>!, <span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="reorderlocation.doc.html">ReorderLocation</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteLocationByKey</span>(<span class="meta">locationKey</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deletelocationbykey.doc.html">DeleteLocationByKey</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationProfileId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseLocationProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">locationKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">locationProfileId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="rebaselocationprofile.doc.html">RebaseLocationProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>locationProfileId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateLocationVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">locationKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">locationProfileId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatelocationversionlabel.doc.html">UpdateLocationVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateLocationProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatelocationprofile.doc.html">UpdateLocationProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateLocationFromSeed</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatelocationfromseed.doc.html">GenerateLocationFromSeed</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateLocationWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatelocationwithnotes.doc.html">GenerateLocationWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   RegisterStyleGuideline Mutation to create a new StyleGuideline</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">registerStyleGuideline</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="registerstyleguideline.doc.html">RegisterStyleGuideline</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   DeleteStyleGuideline Mutation to delete an StyleGuideline</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteStyleGuideline</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateStyleGuideline Mutation to update an Style Guideline's name or prompt text</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateStyleGuideline</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatestyleguideline.doc.html">UpdateStyleGuideline</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   RegisterScriptDialogFlavor Mutation to create a new ScriptDialogFlavor</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">registerScriptDialogFlavor</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="registerscriptdialogflavor.doc.html">RegisterScriptDialogFlavor</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   DeleteScriptDialogFlavor Mutation to delete an ScriptDialogFlavor</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteScriptDialogFlavor</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdateScriptDialogFlavor Mutation to update an Script Dialog Flavor's name or </span></span></li><li><span class="tab"><span class="comment line">#   prompt text</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>archived</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>isGlobal</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateScriptDialogFlavor</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">archived</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">isGlobal</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatescriptdialogflavor.doc.html">UpdateScriptDialogFlavor</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>priceId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateInvoice</span>(<span class="meta">priceId</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="updateinvoice.doc.html">UpdateInvoice</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   RegisterPromptTemplate Mutation to create a new PromptTemplate</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>referenceKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">registerPromptTemplate</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">referenceKey</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="registerprompttemplate.doc.html">RegisterPromptTemplate</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   DeletePromptTemplate Mutation to delete an PromptTemplate</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deletePromptTemplate</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdatePromptTemplate Mutation to update an Prompt Template's name or prompt text</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>promptText</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>referenceKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updatePromptTemplate</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">promptText</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">referenceKey</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="updateprompttemplate.doc.html">UpdatePromptTemplate</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>active</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>beatSheetPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>orderRank</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createMagicNoteCritic</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">active</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">beatSheetPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">orderRank</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptTextPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">storyTextPrompt</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="createmagicnotecritic.doc.html">CreateMagicNoteCritic</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>active</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>beatSheetPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>criticId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>orderRank</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextPrompt</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateMagicNoteCritic</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">active</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">beatSheetPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">criticId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">orderRank</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptTextPrompt</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">storyTextPrompt</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatemagicnotecritic.doc.html">UpdateMagicNoteCritic</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>criticId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteMagicNoteCritic</span>(<span class="meta">criticId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deletemagicnotecritic.doc.html">DeleteMagicNoteCritic</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>criticIds</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>documentId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>documentType</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateMagicNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">criticIds</span>: [<a class="support type" href="id.doc.html">ID</a>],</span></span></li><li><span class="tab"><span class="tab"><span class="meta">documentId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">documentType</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="generatemagicnotes.doc.html">GenerateMagicNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>documentId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>documentType</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateExpansiveNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">documentId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">documentType</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="generateexpansivenotes.doc.html">GenerateExpansiveNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseStoryText</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">storyTextId</span>: <a class="support type" href="id.doc.html">ID</a>, <span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="rebasestorytext.doc.html">RebaseStoryText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateStoryVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">storyTextId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatestoryversionlabel.doc.html">UpdateStoryVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateStoryText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatestorytext.doc.html">UpdateStoryText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateStoryFromSeed</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatestoryfromseed.doc.html">GenerateStoryFromSeed</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateStoryWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatestorywithnotes.doc.html">GenerateStoryWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterOrderAfter</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createCharacterProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">characterOrderAfter</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="createcharacterprofile.doc.html">CreateCharacterProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>newCharacterOrder</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">reorderCharacter</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">newCharacterOrder</span>: <a class="support type" href="int.doc.html">Int</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="reordercharacter.doc.html">ReorderCharacter</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteCharacterByKey</span>(<span class="meta">characterKey</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="deletecharacterbykey.doc.html">DeleteCharacterByKey</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterProfileId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseCharacterProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">characterKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">characterProfileId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="rebasecharacterprofile.doc.html">RebaseCharacterProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>characterProfileId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateCharacterVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">characterKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">characterProfileId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatecharacterversionlabel.doc.html">UpdateCharacterVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>name</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateCharacterProfile</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatecharacterprofile.doc.html">UpdateCharacterProfile</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateCharacterFromSeed</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatecharacterfromseed.doc.html">GenerateCharacterFromSeed</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateCharacterWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatecharacterwithnotes.doc.html">GenerateCharacterWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>beatSheetId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseBeatSheet</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">beatSheetId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="rebasebeatsheet.doc.html">RebaseBeatSheet</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>beatSheetId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateBeatSheetVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">beatSheetId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatebeatsheetversionlabel.doc.html">UpdateBeatSheetVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateBeatSheet</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatebeatsheet.doc.html">UpdateBeatSheet</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>authorStyleId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>screenplayFormat</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptDialogFlavorId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>styleGuidelineId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateBeatSheetFromScene</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">authorStyleId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">screenplayFormat</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptDialogFlavorId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">styleGuidelineId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="generatebeatsheetfromscene.doc.html">GenerateBeatSheetFromScene</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>authorStyleId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>screenplayFormat</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>scriptDialogFlavorId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>styleGuidelineId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateBeatSheetWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">authorStyleId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">screenplayFormat</span>: <a class="support type" href="boolean.doc.html">Boolean</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">scriptDialogFlavorId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">styleGuidelineId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatebeatsheetwithnotes.doc.html">GenerateBeatSheetWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneOrderAfter</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">createSceneText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneOrderAfter</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="createscenetext.doc.html">CreateSceneText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>newSceneOrder</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">reorderScene</span>(<span class="meta">newSceneOrder</span>: <a class="support type" href="int.doc.html">Int</a>!, <span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="reorderscene.doc.html">ReorderScene</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">deleteSceneByKey</span>(<span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!, <span class="meta">sceneKey</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="deletescenebykey.doc.html">DeleteSceneByKey</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">rebaseSceneText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="rebasescenetext.doc.html">RebaseSceneText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneKey</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionLabel</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>versionNumber</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateSceneVersionLabel</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneKey</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneTextId</span>: <a class="support type" href="id.doc.html">ID</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionLabel</span>: <a class="support type" href="string.doc.html">String</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">versionNumber</span>: <a class="support type" href="int.doc.html">Int</a></span></span></li><li><span class="tab">): <a class="support type" href="updatesceneversionlabel.doc.html">UpdateSceneVersionLabel</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textContent</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>title</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updateSceneText</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textContent</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">title</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="updatescenetext.doc.html">UpdateSceneText</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textSeed</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateSceneFromSeed</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textSeed</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatescenefromseed.doc.html">GenerateSceneFromSeed</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextEnd</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>selectTextStart</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>textNotes</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateSceneWithNotes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextEnd</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">selectTextStart</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">textNotes</span>: <a class="support type" href="string.doc.html">String</a></span></span></li><li><span class="tab">): <a class="support type" href="generatescenewithnotes.doc.html">GenerateSceneWithNotes</a> </span></li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>projectId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>sceneCount</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>storyTextId</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">generateMakeScenes</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">projectId</span>: <a class="support type" href="id.doc.html">ID</a>!,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">sceneCount</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">storyTextId</span>: <a class="support type" href="id.doc.html">ID</a>!</span></span></li><li><span class="tab">): <a class="support type" href="generatemakescenes.doc.html">GenerateMakeScenes</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   UpdatePlatformSetting Mutation to update a platform setting's value.</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>key</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>value</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">updatePlatformSetting</span>(<span class="meta">key</span>: <a class="support type" href="string.doc.html">String</a>!, <span class="meta">value</span>: <a class="support type" href="string.doc.html">String</a>!): <a class="support type" href="updateplatformsetting.doc.html">UpdatePlatformSetting</a> </span></li><li>}</li></ul></code>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2 id="require-by" class="graphdoc-section__title slds-text-heading--medium slds-m-top--small">
+            <a href="#require-by">
+                <i class="material-icons">link</i>
+            </a>
+            Require by
+        </h2>
+        <div class="require-by anyone">This element is not required by anyone</div>
+    </div>
+</section>
+<footer>
+<div class="container slds-p-around--large">
+    <p class="slds-text-align--right slds-text-title--caps">
+        Generated with <a href="https://github.com/2fd/graphdoc#readme" target="_blank">graphdoc 2.4.0</a>
+    </p>
+</div>
+</footer>
+</main>
+    <script src="./scripts/focus-active.js"></script>
+    <script src="./scripts/filter-types.js"></script>
+    <script src="./scripts/toggle-navigation.js"></script>
+</body>

@@ -1,0 +1,65 @@
+@import '../../styles/global.scss';
+
+.PopupMenu {
+	position: relative;
+	cursor: default;
+
+	svg {
+		pointer-events: none;
+	}
+
+	&.active .PopupMenuMenu {
+		max-height: 1000px;
+		opacity: 1;
+		pointer-events: all;
+		transform: translateY(99%);
+	}
+
+	.PopupMenuMenu {
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		&.right {
+			left: unset;
+			right: 0;
+		}
+		bottom: 0;
+		padding: 0;
+		background-color: white;
+		border-radius: 0.25em;
+		min-width: 100%;
+		box-sizing: border-box;
+		@include standard-box-shadow;
+
+		transition: 0.4s;
+		max-height: 0;
+		opacity: 0;
+		transform: translateY(110%);
+
+		ul {
+			@include ul-no-formatting;
+			li {
+				&.separator:before {
+					content: '';
+					display: block;
+					border-top: 1px solid $theme-dark-color-highlight;
+					margin: 0 1em;
+				}
+				button {
+					@include button-blank;
+					padding: 0.75em 1em;
+					width: 100%;
+					&:hover {
+						background-color: $off-white;
+					}
+					&:first-child {
+						border-radius: 0.25em 0;
+					}
+					&:last-child {
+						border-radius: 0 0.25em;
+					}
+				}
+			}
+		}
+	}
+}

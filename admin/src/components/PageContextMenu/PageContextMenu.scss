@@ -1,0 +1,62 @@
+@import '../../styles/global.scss';
+
+.PageContextMenu {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: $theme-dark-color;
+	padding: 0 1em;
+
+	.page-title {
+		font-size: 1.5em;
+		margin: 1rem 0;
+		display: flex;
+		flex-wrap: wrap;
+		.breadcrumb {
+			display: flex;
+			flex-wrap: wrap;
+			span {
+				margin: 0 0.25em;
+			}
+		}
+	}
+
+	.context-menu {
+		display: flex;
+		gap: 0.5em;
+		.user-menu-toggle {
+			.PopupMenu {
+				display: flex;
+				align-items: center;
+				gap: 0.25em;
+				padding: 1em 0;
+				.PopupMenuMenu {
+					white-space: nowrap;
+				}
+			}
+		}
+
+		.notifications {
+			padding: 1em 0.5em;
+		}
+
+		.quantity {
+			display: inline-block;
+			background-color: red;
+			border-radius: 50%;
+			width: 16px;
+			height: 16px;
+			margin-left: 2px;
+			text-align: center;
+			span {
+				display: inline-block;
+				vertical-align: top;
+				padding-top: 1px;
+				color: white;
+				font-size: 0.75em;
+			}
+		}
+	}
+}

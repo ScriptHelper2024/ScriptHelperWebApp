@@ -1,0 +1,8 @@
+.env
+logs/*
+ssl/*
+container.id
+__pycache__/
+.coverage
+supervisord.log
+venv/

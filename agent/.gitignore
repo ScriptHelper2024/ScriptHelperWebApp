@@ -1,0 +1,6 @@
+.env
+logs/*
+container.id
+supervisord.log
+google_service_account.json
+__pycache__

@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  sh-admin:
+    build: .
+    container_name: sh-admin
+    environment:
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - VIRTUAL_PORT=${VIRTUAL_PORT}
+    ports:
+      - "3000:3000"
+    networks:
+      - default
+    restart: always
+
+networks:
+  default:
+    external:
+      name: ${NETWORK_NAME}

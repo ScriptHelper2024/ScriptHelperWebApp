@@ -1,0 +1,214 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import './EditStyleGuidelinesModal.scss'
+
+import ModalDialog from '../ModalDialog/ModalDialog'
+import { FeedbackContext } from '../../contexts/FeedbackContext/FeedbackContext'
+import useApi from '../../api/useApi'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import FormikErrorMessageHelper from '../../util/FormikErorMessageHelper'
+import LoadingBlocker from '../LoadingBlocker/LoadingBlocker'
+import formikModalOnClose from '../../tests/util/formikModalOnClose'
+
+const EditStyleGuidelinesModal = ({ isOpen, onFinished, recordId }) => {
+	const [loading, setLoading] = React.useState(false)
+	const [record, setRecord] = React.useState(null)
+
+	const feedbackContext = React.useContext(FeedbackContext)
+	const api = useApi()
+
+	React.useEffect(() => {
+		if (recordId) {
+			setLoading(true)
+			api
+				.getStyleGuideline(recordId)
+				.then((data) => setRecord(data.styleGuideline))
+				.catch((e) => feedbackContext.handleException(e))
+				.finally(() => setLoading(false))
+		}
+	}, [recordId])
+
+	const formik = useFormik({
+		initialValues: {
+			archived: record?.archived || false,
+			name: record?.name || '',
+			promptText: record?.promptText || '',
+		},
+		enableReinitialize: true,
+		validationSchema: Yup.object({
+			name: Yup.string().label('Name').required(),
+		}),
+		onSubmit: async (values, { setFieldError }) => {
+			feedbackContext.clear()
+			setLoading(true)
+			if (record?.id) {
+				return await api
+					.updateStyleGuideline({ id: record.id, ...values })
+					.then((data) => {
+						setRecord(data.record)
+						feedbackContext.indicateSuccess(
+							'Author Style updated:' + data.record.name
+						)
+						onFinished(true)
+					})
+					.catch((e) => {
+						if (e?.graphQLErrors) {
+							const helper = new FormikErrorMessageHelper(setFieldError, {})
+							if (!helper.handleAll(e?.graphQLErrors)) {
+								helper.unhandled.forEach((error) => {
+									feedbackContext.handleException(error)
+								})
+							}
+						} else {
+							throw e
+						}
+					})
+					.finally(() => {
+						setLoading(false)
+					})
+			} else {
+				return await api
+					.addStyleGuideline(values)
+					.then((data) => {
+						setRecord(data.record)
+						feedbackContext.indicateSuccess(
+							'Author Style created: ' + data.record.name,
+							{ attributes: { 'data-record-id': data.record.id } }
+						)
+						onFinished(true)
+					})
+					.catch((e) => {
+						if (e?.graphQLErrors && e.graphQLErrors.length !== 0) {
+							const helper = new FormikErrorMessageHelper(setFieldError, {})
+							if (!helper.handleAll(e?.graphQLErrors)) {
+								helper.unhandled.forEach((error) => {
+									feedbackContext.handleException(error)
+								})
+							}
+						} else {
+							feedbackContext.handleException(e)
+						}
+					})
+					.finally(() => setLoading(false))
+			}
+		},
+	})
+
+	const handleDelete = () => {
+		if (
+			confirm(
+				'Are you sure you want to delete this Author Style?\n\nNote: This action cannot be undone.'
+			)
+		) {
+			setLoading(true)
+			api
+				.deleteStyleGuideline(record.id)
+				.then(() => {
+					feedbackContext.indicateSuccess('Author Style deleted: ' + record.name)
+					onFinished(true)
+				})
+				.catch((e) => feedbackContext.handleException(e))
+				.finally(() => setLoading(false))
+		}
+	}
+
+	const formRef = React.useRef(null)
+
+	const onClose = formikModalOnClose(formik, formRef, onFinished)
+
+	return (
+		<ModalDialog
+			isOpen={isOpen}
+			className="EditStyleGuidelinesModal"
+			onClose={onClose}
+		>
+			<LoadingBlocker loading={loading}>
+				<form onSubmit={formik.handleSubmit} className="record" ref={formRef}>
+					<h3>{recordId ? 'Edit' : 'Add'} Style Guidelines Entry</h3>
+					<div className="field-group">
+						<div className="field checkbox">
+							<label>
+								<span>Archived</span>
+								<input
+									type="checkbox"
+									name="archived"
+									onChange={formik.handleChange}
+									onBlur={formik.handleBlur}
+									checked={formik.values.archived}
+								/>
+							</label>
+							<div className="error">
+								{formik.touched.archived && formik.errors.archived}
+							</div>
+						</div>
+					</div>
+					<div className="field">
+						<label>
+							<span>Name</span>
+							<input
+								type="text"
+								name="name"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.name}
+							/>
+						</label>
+						<div className="error">{formik.touched.name && formik.errors.name}</div>
+					</div>
+					<div className="field">
+						<label>
+							<span>Prompt Text</span>
+							<textarea
+								name="promptText"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.promptText}
+							/>
+						</label>
+						<div className="error">
+							{formik.touched.promptText && formik.errors.promptText}
+						</div>
+					</div>
+
+					<div className="actions">
+						<button
+							type="submit"
+							className="theme"
+							aria-label="Update Record"
+							disabled={!formik.dirty || !formik.isValid}
+						>
+							Update
+						</button>
+						{record?.id && (
+							<button
+								type="button"
+								className="theme danger"
+								aria-label="Delete Record"
+								onClick={() => handleDelete(record.id)}
+							>
+								Delete
+							</button>
+						)}
+						<button
+							type="button"
+							className="theme plain"
+							aria-label="Cancel Edit"
+							onClick={() => onFinished(false)}
+						>
+							Cancel
+						</button>
+					</div>
+				</form>
+			</LoadingBlocker>
+		</ModalDialog>
+	)
+}
+
+EditStyleGuidelinesModal.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	onFinished: PropTypes.func.isRequired,
+	recordId: PropTypes.string,
+}
+
+export default EditStyleGuidelinesModal

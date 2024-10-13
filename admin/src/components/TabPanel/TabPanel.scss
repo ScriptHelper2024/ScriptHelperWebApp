@@ -1,0 +1,41 @@
+@import '../../styles/global.scss';
+
+.TabPanel {
+	border-radius: 0.3rem;
+
+	margin: 1rem;
+
+	.tabs {
+		display: flex;
+		flex-wrap: wrap;
+
+		button {
+			@include button-blank;
+			padding: 0.5em;
+			border-bottom: 1px solid $theme-dark-color-muted;
+			border-radius: 0.25em 0.25em 0 0;
+			font-weight: bold;
+			&.selected {
+				background-color: $off-white;
+				border-top: 1px solid $theme-dark-color-muted;
+				border-left: 1px solid $theme-dark-color-muted;
+				border-right: 1px solid $theme-dark-color-muted;
+				border-bottom: 1px solid transparent;
+			}
+			&:last-of-type {
+			}
+		}
+		.spacer {
+			flex-grow: 1;
+			border-bottom: 1px solid $theme-dark-color-muted;
+		}
+	}
+	.TabPanelPanel {
+		padding: 1em;
+		background-color: $off-white;
+		border-left: 1px solid $theme-dark-color-muted;
+		border-right: 1px solid $theme-dark-color-muted;
+		border-bottom: 1px solid $theme-dark-color-muted;
+		border-radius: 0 0 0.25em 0.25em;
+	}
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #444;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Confirmation</h1>
+        <div class="message">
+            <p>Your verification code is:</p>
+            <div class="code">{{ code }}</div>
+        </div>
+        <p>Thank you for registering. Please enter the above code to verify your email address.</p>
+    </div>
+</body>
+</html>

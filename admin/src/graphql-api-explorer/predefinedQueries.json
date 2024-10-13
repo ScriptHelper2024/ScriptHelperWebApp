@@ -1,0 +1,2373 @@
+{
+  "userPreferenceByUserId": {
+    "type": "query",
+    "fields": {
+      "userPreferenceByUserId": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "defaultLlm"
+        ]
+      }
+    }
+  },
+  "myUserPreference": {
+    "type": "query",
+    "fields": {
+      "myUserPreference": {
+        "args": {},
+        "returns": [
+          "defaultLlm"
+        ]
+      }
+    }
+  },
+  "defaultLlmOptions": {
+    "type": "query",
+    "fields": {
+      "defaultLlmOptions": {
+        "args": {},
+        "returns": [
+          "defaultLlmOptions"
+        ]
+      }
+    }
+  },
+  "listTitleSuggestions": {
+    "type": "query",
+    "fields": {
+      "listTitleSuggestions": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "title",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "getTitleSuggestionById": {
+    "type": "query",
+    "fields": {
+      "getTitleSuggestionById": {
+        "args": {
+          "projectId": "ID",
+          "suggestionId": "ID"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "title",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "agentTaskById": {
+    "type": "query",
+    "fields": {
+      "agentTaskById": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "status",
+          "statusMessage",
+          "llmModel",
+          "maxInputTokens",
+          "maxOutputTokens",
+          "temperature",
+          "promptText",
+          "systemRole",
+          "documentType",
+          "documentId",
+          "metadata",
+          "inputTokensUsed",
+          "outputTokensUsed",
+          "processTime",
+          "agentResults",
+          "agentId",
+          "errors",
+          "createdAt",
+          "processingAt",
+          "updatedAt"
+        ]
+      }
+    }
+  },
+  "agentTaskByIdForProject": {
+    "type": "query",
+    "fields": {
+      "agentTaskByIdForProject": {
+        "args": {
+          "id": "ID",
+          "projectId": "String"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "status",
+          "statusMessage",
+          "llmModel",
+          "maxInputTokens",
+          "maxOutputTokens",
+          "temperature",
+          "promptText",
+          "systemRole",
+          "documentType",
+          "documentId",
+          "metadata",
+          "inputTokensUsed",
+          "outputTokensUsed",
+          "processTime",
+          "agentResults",
+          "agentId",
+          "errors",
+          "createdAt",
+          "processingAt",
+          "updatedAt"
+        ]
+      }
+    }
+  },
+  "listAgentTasks": {
+    "type": "query",
+    "fields": {
+      "listAgentTasks": {
+        "args": {
+          "projectId": "String",
+          "status": "String",
+          "documentType": "String",
+          "documentId": "String",
+          "sort": "String",
+          "limit": "Int",
+          "page": "Int"
+        },
+        "returns": [
+          "pages",
+          "agentTasks",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "listAgentTasksByProject": {
+    "type": "query",
+    "fields": {
+      "listAgentTasksByProject": {
+        "args": {
+          "projectId": "String",
+          "status": "String",
+          "documentType": "String",
+          "documentId": "String",
+          "sort": "String",
+          "limit": "Int",
+          "page": "Int"
+        },
+        "returns": [
+          "pages",
+          "agentTasks"
+        ]
+      }
+    }
+  },
+  "authorStyleById": {
+    "type": "query",
+    "fields": {
+      "authorStyleById": {
+        "args": {
+          "id": "ID",
+          "includeArchived": "Boolean",
+          "globalOnly": "Boolean"
+        },
+        "returns": [
+          "id",
+          "name",
+          "promptText",
+          "userId",
+          "creatorEmail",
+          "archived",
+          "isGlobal",
+          "createdAt",
+          "modifiedAt"
+        ]
+      }
+    }
+  },
+  "allAuthorStyles": {
+    "type": "query",
+    "fields": {
+      "allAuthorStyles": {
+        "args": {
+          "nameSearchTerm": "String",
+          "emailSearchTerm": "String",
+          "idSearchTerm": "String",
+          "includeArchived": "Boolean",
+          "globalOnly": "Boolean",
+          "page": "Int",
+          "limit": "Int"
+        },
+        "returns": [
+          "pages",
+          "authorStyles",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "setupIntentCard": {
+    "type": "query",
+    "fields": {
+      "setupIntentCard": {
+        "args": {},
+        "returns": [
+          "clientSecret"
+        ]
+      }
+    }
+  },
+  "me": {
+    "type": "query",
+    "fields": {
+      "me": {
+        "args": {},
+        "returns": [
+          "id",
+          "email",
+          "firstName",
+          "lastName",
+          "createdAt",
+          "modifiedAt",
+          "emailVerified",
+          "verifiedAt",
+          "adminLevel" 
+        ]
+      }
+    }
+  },
+  "userById": {
+    "type": "query",
+    "fields": {
+      "userById": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "id",
+          "email",
+          "firstName",
+          "lastName",
+          "createdAt",
+          "modifiedAt",
+          "emailVerified",
+          "verifiedAt",
+          "adminLevel"
+        ]
+      }
+    }
+  },
+  "userByEmail": {
+    "type": "query",
+    "fields": {
+      "userByEmail": {
+        "args": {
+          "email": "String"
+        },
+        "returns": [
+          "id",
+          "email",
+          "firstName",
+          "lastName",
+          "createdAt",
+          "modifiedAt",
+          "emailVerified",
+          "verifiedAt",
+          "adminLevel"
+        ]
+      }
+    }
+  },
+  "allUsers": {
+    "type": "query",
+    "fields": {
+      "allUsers": {
+        "args": {
+          "page": "Int",
+          "limit": "Int",
+          "email": "String",
+          "fromDate": "DateTime",
+          "toDate": "DateTime"
+        },
+        "returns": [
+          "pages",
+          "users",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "getScriptText": {
+    "type": "query",
+    "fields": {
+      "getScriptText": {
+        "args": {
+          "textId": "ID",
+          "sceneKey": "UUID",
+          "versionNumber": "Int",
+          "projectId": "ID",
+          "formatted": "Boolean"
+        },
+        "returns": [
+          "id",
+          "sceneKey",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "sceneTextId",
+          "textNotes",
+          "textContent",
+          "textContentFormatted",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listScriptTextVersions": {
+    "type": "query",
+    "fields": {
+      "listScriptTextVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "sceneKey",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "sceneTextId",
+          "textNotes",
+          "textContent",
+          "textContentFormatted",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "type": "query",
+    "fields": {
+      "projects": {
+        "args": {},
+        "returns": [
+          "id",
+          "title",
+          "createdAt",
+          "updatedAt",
+          "archived",
+          "metadata",
+          "members",
+          "latestStoryTextId"
+        ]
+      }
+    }
+  },
+  "projectById": {
+    "type": "query",
+    "fields": {
+      "projectById": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "id",
+          "title",
+          "createdAt",
+          "updatedAt",
+          "archived",
+          "metadata",
+          "members",
+          "latestStoryTextId"
+        ]
+      }
+    }
+  },
+  "collateProject": {
+    "type": "query",
+    "fields": {
+      "collateProject": {
+        "args": {
+          "projectId": "ID",
+          "detailed": "Boolean",
+          "includeStoryTitle": "Boolean",
+          "includeStoryText": "Boolean",
+          "includeSceneNumber": "Boolean",
+          "includeSceneTitle": "Boolean",
+          "includeSceneHint": "Boolean",
+          "includeSceneText": "Boolean",
+          "includeSceneScript": "Boolean"
+        },
+        "returns": [
+          "text"
+        ]
+      }
+    }
+  },
+  "listProjectLocations": {
+    "type": "query",
+    "fields": {
+      "listProjectLocations": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "locationKey",
+          "locationOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "locationCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "getLocationProfile": {
+    "type": "query",
+    "fields": {
+      "getLocationProfile": {
+        "args": {
+          "textId": "ID",
+          "projectId": "ID",
+          "locationKey": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "locationKey",
+          "locationOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "locationCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listLocationVersions": {
+    "type": "query",
+    "fields": {
+      "listLocationVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "locationKey",
+          "locationOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "locationCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "styleGuidelineById": {
+    "type": "query",
+    "fields": {
+      "styleGuidelineById": {
+        "args": {
+          "id": "ID",
+          "includeArchived": "Boolean",
+          "includeGlobal": "Boolean"
+        },
+        "returns": [
+          "id",
+          "name",
+          "promptText",
+          "userId",
+          "creatorEmail",
+          "archived",
+          "isGlobal",
+          "createdAt",
+          "modifiedAt"
+        ]
+      }
+    }
+  },
+  "allStyleGuidelines": {
+    "type": "query",
+    "fields": {
+      "allStyleGuidelines": {
+        "args": {
+          "nameSearchTerm": "String",
+          "emailSearchTerm": "String",
+          "idSearchTerm": "String",
+          "includeArchived": "Boolean",
+          "globalOnly": "Boolean",
+          "page": "Int",
+          "limit": "Int"
+        },
+        "returns": [
+          "pages",
+          "styleGuidelines",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "scriptDialogFlavorById": {
+    "type": "query",
+    "fields": {
+      "scriptDialogFlavorById": {
+        "args": {
+          "id": "ID",
+          "includeArchived": "Boolean",
+          "includeGlobal": "Boolean"
+        },
+        "returns": [
+          "id",
+          "name",
+          "promptText",
+          "userId",
+          "creatorEmail",
+          "archived",
+          "isGlobal",
+          "createdAt",
+          "modifiedAt"
+        ]
+      }
+    }
+  },
+  "allScriptDialogFlavors": {
+    "type": "query",
+    "fields": {
+      "allScriptDialogFlavors": {
+        "args": {
+          "nameSearchTerm": "String",
+          "emailSearchTerm": "String",
+          "idSearchTerm": "String",
+          "includeArchived": "Boolean",
+          "globalOnly": "Boolean",
+          "page": "Int",
+          "limit": "Int"
+        },
+        "returns": [
+          "pages",
+          "scriptDialogFlavors",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "healthCheck": {
+    "type": "query",
+    "fields": {
+      "healthCheck": {
+        "args": {},
+        "returns": [
+          "status"
+        ]
+      }
+    }
+  },
+  "promptTemplateById": {
+    "type": "query",
+    "fields": {
+      "promptTemplateById": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "id",
+          "name",
+          "referenceKey",
+          "promptText",
+          "userId",
+          "creatorEmail",
+          "createdAt",
+          "modifiedAt",
+          "assignedSettings"
+        ]
+      }
+    }
+  },
+  "allPromptTemplates": {
+    "type": "query",
+    "fields": {
+      "allPromptTemplates": {
+        "args": {
+          "page": "Int",
+          "limit": "Int",
+          "searchTerm": "String"
+        },
+        "returns": [
+          "pages",
+          "promptTemplates",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "getMagicNoteCritic": {
+    "type": "query",
+    "fields": {
+      "getMagicNoteCritic": {
+        "args": {
+          "criticId": "ID"
+        },
+        "returns": [
+          "id",
+          "userId",
+          "userEmail",
+          "active",
+          "name",
+          "orderRank",
+          "storyTextPrompt",
+          "sceneTextPrompt",
+          "beatSheetPrompt",
+          "scriptTextPrompt",
+          "createdAt",
+          "updatedAt"
+        ]
+      }
+    }
+  },
+  "listMagicNoteCritics": {
+    "type": "query",
+    "fields": {
+      "listMagicNoteCritics": {
+        "args": {
+          "name": "String",
+          "activeOnly": "Boolean",
+          "page": "Int",
+          "limit": "Int"
+        },
+        "returns": [
+          "pages",
+          "magicNoteCritics",
+          "statistics"
+        ]
+      }
+    }
+  },
+  "listMagicNoteCriticsByType": {
+    "type": "query",
+    "fields": {
+      "listMagicNoteCriticsByType": {
+        "args": {},
+        "returns": [
+          "id",
+          "userId",
+          "userEmail",
+          "active",
+          "name",
+          "orderRank",
+          "storyTextPrompt",
+          "sceneTextPrompt",
+          "beatSheetPrompt",
+          "scriptTextPrompt",
+          "createdAt",
+          "updatedAt"
+        ]
+      }
+    }
+  },
+  "getStoryText": {
+    "type": "query",
+    "fields": {
+      "getStoryText": {
+        "args": {
+          "textId": "ID",
+          "projectId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listStoryVersions": {
+    "type": "query",
+    "fields": {
+      "listStoryVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listProjectCharacters": {
+    "type": "query",
+    "fields": {
+      "listProjectCharacters": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "characterKey",
+          "characterOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "getCharacterProfile": {
+    "type": "query",
+    "fields": {
+      "getCharacterProfile": {
+        "args": {
+          "textId": "ID",
+          "projectId": "ID",
+          "characterKey": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "characterKey",
+          "characterOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listCharacterVersions": {
+    "type": "query",
+    "fields": {
+      "listCharacterVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "characterKey",
+          "characterOrder",
+          "name",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "getBeatSheet": {
+    "type": "query",
+    "fields": {
+      "getBeatSheet": {
+        "args": {
+          "textId": "ID",
+          "sceneKey": "UUID",
+          "versionNumber": "Int",
+          "projectId": "ID"
+        },
+        "returns": [
+          "id",
+          "sceneKey",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "sceneTextId",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listBeatSheetVersions": {
+    "type": "query",
+    "fields": {
+      "listBeatSheetVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "sceneKey",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "sceneTextId",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy"
+        ]
+      }
+    }
+  },
+  "listProjectScenes": {
+    "type": "query",
+    "fields": {
+      "listProjectScenes": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "sceneKey",
+          "sceneOrder",
+          "title",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy",
+          "latestBeatSheetId",
+          "latestScriptTextId"
+        ]
+      }
+    }
+  },
+  "getSceneText": {
+    "type": "query",
+    "fields": {
+      "getSceneText": {
+        "args": {
+          "textId": "ID",
+          "projectId": "ID",
+          "sceneKey": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "id",
+          "projectId",
+          "sceneKey",
+          "sceneOrder",
+          "title",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy",
+          "latestBeatSheetId",
+          "latestScriptTextId"
+        ]
+      }
+    }
+  },
+  "listSceneVersions": {
+    "type": "query",
+    "fields": {
+      "listSceneVersions": {
+        "args": {},
+        "returns": [
+          "id",
+          "projectId",
+          "sceneKey",
+          "sceneOrder",
+          "title",
+          "versionType",
+          "sourceVersionNumber",
+          "versionNumber",
+          "versionLabel",
+          "textSeed",
+          "textNotes",
+          "textContent",
+          "characterCount",
+          "llmModel",
+          "createdAt",
+          "createdBy",
+          "latestBeatSheetId",
+          "latestScriptTextId"
+        ]
+      }
+    }
+  },
+  "platformStatistics": {
+    "type": "query",
+    "fields": {
+      "platformStatistics": {
+        "args": {
+          "startDate": "String",
+          "endDate": "String"
+        },
+        "returns": [
+          "project",
+          "storyText",
+          "sceneText",
+          "beatSheet",
+          "scriptText",
+          "characterProfile",
+          "locationProfile",
+          "suggestedStoryTitle"
+        ]
+      }
+    }
+  },
+  "platformSetting": {
+    "type": "query",
+    "fields": {
+      "platformSetting": {
+        "args": {
+          "key": "String"
+        },
+        "returns": [
+          "id",
+          "key",
+          "value",
+          "createdAt",
+          "modifiedAt"
+        ]
+      }
+    }
+  },
+  "listPlatformSettings": {
+    "type": "query",
+    "fields": {
+      "listPlatformSettings": {
+        "args": {},
+        "returns": [
+          "id",
+          "key",
+          "value",
+          "createdAt",
+          "modifiedAt"
+        ]
+      }
+    }
+  },
+  "updateUserPreference": {
+    "type": "mutation",
+    "fields": {
+      "updateUserPreference": {
+        "args": {
+          "defaultLlm": "String",
+          "id": "ID"
+        },
+        "returns": [
+          "userPreference"
+        ]
+      }
+    }
+  },
+  "updateMyUserPreference": {
+    "type": "mutation",
+    "fields": {
+      "updateMyUserPreference": {
+        "args": {
+          "defaultLlm": "String"
+        },
+        "returns": [
+          "userPreference"
+        ]
+      }
+    }
+  },
+  "createTitleSuggestion": {
+    "type": "mutation",
+    "fields": {
+      "createTitleSuggestion": {
+        "args": {
+          "projectId": "ID",
+          "title": "String"
+        },
+        "returns": [
+          "success",
+          "suggestion"
+        ]
+      }
+    }
+  },
+  "deleteTitleSuggestion": {
+    "type": "mutation",
+    "fields": {
+      "deleteTitleSuggestion": {
+        "args": {
+          "projectId": "ID",
+          "suggestionId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "deleteAllTitleSuggestions": {
+    "type": "mutation",
+    "fields": {
+      "deleteAllTitleSuggestions": {
+        "args": {
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "applyTitleSuggestion": {
+    "type": "mutation",
+    "fields": {
+      "applyTitleSuggestion": {
+        "args": {
+          "projectId": "ID",
+          "suggestionId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "generateTitleSuggestion": {
+    "type": "mutation",
+    "fields": {
+      "generateTitleSuggestion": {
+        "args": {
+          "projectId": "ID",
+          "storyTextId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "updateAgentTask": {
+    "type": "mutation",
+    "fields": {
+      "updateAgentTask": {
+        "args": {
+          "agentId": "String",
+          "agentResults": "String",
+          "errors": "String",
+          "id": "ID",
+          "inputTokensUsed": "Int",
+          "outputTokensUsed": "Int",
+          "processTime": "Int",
+          "status": "String",
+          "statusMessage": "String"
+        },
+        "returns": [
+          "agentTask"
+        ]
+      }
+    }
+  },
+  "deleteAgentTask": {
+    "type": "mutation",
+    "fields": {
+      "deleteAgentTask": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "resetAgentTask": {
+    "type": "mutation",
+    "fields": {
+      "resetAgentTask": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "registerAuthorStyle": {
+    "type": "mutation",
+    "fields": {
+      "registerAuthorStyle": {
+        "args": {
+          "archived": "Boolean",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "authorStyle"
+        ]
+      }
+    }
+  },
+  "deleteAuthorStyle": {
+    "type": "mutation",
+    "fields": {
+      "deleteAuthorStyle": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": "SubclassWithMeta_Meta"
+      }
+    }
+  },
+  "updateAuthorStyle": {
+    "type": "mutation",
+    "fields": {
+      "updateAuthorStyle": {
+        "args": {
+          "archived": "Boolean",
+          "id": "ID",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "authorStyle"
+        ]
+      }
+    }
+  },
+  "registerUser": {
+    "type": "mutation",
+    "fields": {
+      "registerUser": {
+        "args": {
+          "email": "String",
+          "firstName": "String",
+          "lastName": "String",
+          "password": "String"
+        },
+        "returns": [
+          "user",
+          "accessToken"
+        ]
+      }
+    }
+  },
+  "deleteUser": {
+    "type": "mutation",
+    "fields": {
+      "deleteUser": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": "SubclassWithMeta_Meta"
+      }
+    }
+  },
+  "updateUser": {
+    "type": "mutation",
+    "fields": {
+      "updateUser": {
+        "args": {
+          "email": "String",
+          "firstName": "String",
+          "id": "ID",
+          "lastName": "String",
+          "password": "String"
+        },
+        "returns": [
+          "user"
+        ]
+      }
+    }
+  },
+  "updateMe": {
+    "type": "mutation",
+    "fields": {
+      "updateMe": {
+        "args": {
+          "email": "String",
+          "firstName": "String",
+          "lastName": "String",
+          "password": "String"
+        },
+        "returns": [
+          "user"
+        ]
+      }
+    }
+  },
+  "login": {
+    "type": "mutation",
+    "fields": {
+      "login": {
+        "args": {
+          "email": "String",
+          "password": "String"
+        },
+        "returns": [
+          "accessToken"
+        ]
+      }
+    }
+  },
+  "logout": {
+    "type": "mutation",
+    "fields": {
+      "logout": {
+        "args": {},
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "sendEmailVerification": {
+    "type": "mutation",
+    "fields": {
+      "sendEmailVerification": {
+        "args": {},
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "verifyEmail": {
+    "type": "mutation",
+    "fields": {
+      "verifyEmail": {
+        "args": {
+          "code": "String"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "passwordResetRequest": {
+    "type": "mutation",
+    "fields": {
+      "passwordResetRequest": {
+        "args": {
+          "email": "String"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "passwordReset": {
+    "type": "mutation",
+    "fields": {
+      "passwordReset": {
+        "args": {
+          "email": "String",
+          "newPassword": "String",
+          "resetCode": "String"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "socialLogin": {
+    "type": "mutation",
+    "fields": {
+      "socialLogin": {
+        "args": {
+          "provider": "String"
+        },
+        "returns": [
+          "authorizationUrl"
+        ]
+      }
+    }
+  },
+  "finalizeSocialLogin": {
+    "type": "mutation",
+    "fields": {
+      "finalizeSocialLogin": {
+        "args": {
+          "code": "String",
+          "provider": "String"
+        },
+        "returns": [
+          "accessToken"
+        ]
+      }
+    }
+  },
+  "rebaseScriptText": {
+    "type": "mutation",
+    "fields": {
+      "rebaseScriptText": {
+        "args": {
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "scriptTextId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateScriptTextVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateScriptTextVersionLabel": {
+        "args": {
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "scriptTextId": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateScriptText": {
+    "type": "mutation",
+    "fields": {
+      "updateScriptText": {
+        "args": {
+          "projectId": "ID",
+          "sceneTextId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "scriptText"
+        ]
+      }
+    }
+  },
+  "generateScriptTextFromScene": {
+    "type": "mutation",
+    "fields": {
+      "generateScriptTextFromScene": {
+        "args": {
+          "authorStyleId": "ID",
+          "includeBeatSheet": "Boolean",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "sceneTextId": "ID",
+          "screenplayFormat": "Boolean",
+          "scriptDialogFlavorId": "ID",
+          "styleGuidelineId": "ID",
+          "textId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateScriptTextWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateScriptTextWithNotes": {
+        "args": {
+          "authorStyleId": "ID",
+          "includeBeatSheet": "Boolean",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "screenplayFormat": "Boolean",
+          "scriptDialogFlavorId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "styleGuidelineId": "ID",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateScriptAndBeatSheet": {
+    "type": "mutation",
+    "fields": {
+      "generateScriptAndBeatSheet": {
+        "args": {
+          "authorStyleId": "ID",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "sceneTextId": "ID",
+          "screenplayFormat": "Boolean",
+          "scriptDialogFlavorId": "ID",
+          "styleGuidelineId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "createProject": {
+    "type": "mutation",
+    "fields": {
+      "createProject": {
+        "args": {
+          "metadata": "ProjectMetadataInput",
+          "textSeed": "String",
+          "title": "String"
+        },
+        "returns": [
+          "project"
+        ]
+      }
+    }
+  },
+  "updateProject": {
+    "type": "mutation",
+    "fields": {
+      "updateProject": {
+        "args": {
+          "metadata": "ProjectMetadataInput",
+          "projectId": "ID",
+          "title": "String"
+        },
+        "returns": [
+          "project"
+        ]
+      }
+    }
+  },
+  "archiveProject": {
+    "type": "mutation",
+    "fields": {
+      "archiveProject": {
+        "args": {
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "restoreProject": {
+    "type": "mutation",
+    "fields": {
+      "restoreProject": {
+        "args": {
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "cloneProject": {
+    "type": "mutation",
+    "fields": {
+      "cloneProject": {
+        "args": {
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "createLocationProfile": {
+    "type": "mutation",
+    "fields": {
+      "createLocationProfile": {
+        "args": {
+          "locationOrderAfter": "Int",
+          "name": "String",
+          "projectId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "locationProfile"
+        ]
+      }
+    }
+  },
+  "reorderLocation": {
+    "type": "mutation",
+    "fields": {
+      "reorderLocation": {
+        "args": {
+          "newLocationOrder": "Int",
+          "projectId": "ID",
+          "textId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "deleteLocationByKey": {
+    "type": "mutation",
+    "fields": {
+      "deleteLocationByKey": {
+        "args": {
+          "locationKey": "String",
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "rebaseLocationProfile": {
+    "type": "mutation",
+    "fields": {
+      "rebaseLocationProfile": {
+        "args": {
+          "locationKey": "String",
+          "locationProfileId": "ID",
+          "projectId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateLocationVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateLocationVersionLabel": {
+        "args": {
+          "locationKey": "String",
+          "locationProfileId": "ID",
+          "projectId": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateLocationProfile": {
+    "type": "mutation",
+    "fields": {
+      "updateLocationProfile": {
+        "args": {
+          "name": "String",
+          "projectId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String",
+          "textSeed": "String"
+        },
+        "returns": [
+          "locationProfile"
+        ]
+      }
+    }
+  },
+  "generateLocationFromSeed": {
+    "type": "mutation",
+    "fields": {
+      "generateLocationFromSeed": {
+        "args": {
+          "projectId": "ID",
+          "textId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateLocationWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateLocationWithNotes": {
+        "args": {
+          "projectId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "registerStyleGuideline": {
+    "type": "mutation",
+    "fields": {
+      "registerStyleGuideline": {
+        "args": {
+          "archived": "Boolean",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "styleGuideline"
+        ]
+      }
+    }
+  },
+  "deleteStyleGuideline": {
+    "type": "mutation",
+    "fields": {
+      "deleteStyleGuideline": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": "SubclassWithMeta_Meta"
+      }
+    }
+  },
+  "updateStyleGuideline": {
+    "type": "mutation",
+    "fields": {
+      "updateStyleGuideline": {
+        "args": {
+          "archived": "Boolean",
+          "id": "ID",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "styleGuideline"
+        ]
+      }
+    }
+  },
+  "registerScriptDialogFlavor": {
+    "type": "mutation",
+    "fields": {
+      "registerScriptDialogFlavor": {
+        "args": {
+          "archived": "Boolean",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "scriptDialogFlavor"
+        ]
+      }
+    }
+  },
+  "deleteScriptDialogFlavor": {
+    "type": "mutation",
+    "fields": {
+      "deleteScriptDialogFlavor": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": "SubclassWithMeta_Meta"
+      }
+    }
+  },
+  "updateScriptDialogFlavor": {
+    "type": "mutation",
+    "fields": {
+      "updateScriptDialogFlavor": {
+        "args": {
+          "archived": "Boolean",
+          "id": "ID",
+          "isGlobal": "Boolean",
+          "name": "String",
+          "promptText": "String"
+        },
+        "returns": [
+          "scriptDialogFlavor"
+        ]
+      }
+    }
+  },
+  "registerPromptTemplate": {
+    "type": "mutation",
+    "fields": {
+      "registerPromptTemplate": {
+        "args": {
+          "name": "String",
+          "promptText": "String",
+          "referenceKey": "String"
+        },
+        "returns": [
+          "promptTemplate"
+        ]
+      }
+    }
+  },
+  "deletePromptTemplate": {
+    "type": "mutation",
+    "fields": {
+      "deletePromptTemplate": {
+        "args": {
+          "id": "ID"
+        },
+        "returns": "SubclassWithMeta_Meta"
+      }
+    }
+  },
+  "updatePromptTemplate": {
+    "type": "mutation",
+    "fields": {
+      "updatePromptTemplate": {
+        "args": {
+          "id": "ID",
+          "name": "String",
+          "promptText": "String",
+          "referenceKey": "String"
+        },
+        "returns": [
+          "promptTemplate"
+        ]
+      }
+    }
+  },
+  "createMagicNoteCritic": {
+    "type": "mutation",
+    "fields": {
+      "createMagicNoteCritic": {
+        "args": {
+          "active": "Boolean",
+          "beatSheetPrompt": "String",
+          "name": "String",
+          "orderRank": "Int",
+          "sceneTextPrompt": "String",
+          "scriptTextPrompt": "String",
+          "storyTextPrompt": "String"
+        },
+        "returns": [
+          "magicNoteCritic"
+        ]
+      }
+    }
+  },
+  "updateMagicNoteCritic": {
+    "type": "mutation",
+    "fields": {
+      "updateMagicNoteCritic": {
+        "args": {
+          "active": "Boolean",
+          "beatSheetPrompt": "String",
+          "criticId": "ID",
+          "name": "String",
+          "orderRank": "Int",
+          "sceneTextPrompt": "String",
+          "scriptTextPrompt": "String",
+          "storyTextPrompt": "String"
+        },
+        "returns": [
+          "magicNoteCritic"
+        ]
+      }
+    }
+  },
+  "deleteMagicNoteCritic": {
+    "type": "mutation",
+    "fields": {
+      "deleteMagicNoteCritic": {
+        "args": {
+          "criticId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "generateMagicNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateMagicNotes": {
+        "args": {
+          "criticIds": [
+            "ID"
+          ],
+          "documentId": "ID",
+          "documentType": "String",
+          "projectId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateExpansiveNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateExpansiveNotes": {
+        "args": {
+          "documentId": "ID",
+          "documentType": "String",
+          "projectId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "rebaseStoryText": {
+    "type": "mutation",
+    "fields": {
+      "rebaseStoryText": {
+        "args": {
+          "projectId": "ID",
+          "storyTextId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateStoryVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateStoryVersionLabel": {
+        "args": {
+          "projectId": "ID",
+          "storyTextId": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateStoryText": {
+    "type": "mutation",
+    "fields": {
+      "updateStoryText": {
+        "args": {
+          "projectId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String",
+          "textSeed": "String"
+        },
+        "returns": [
+          "storyText"
+        ]
+      }
+    }
+  },
+  "generateStoryFromSeed": {
+    "type": "mutation",
+    "fields": {
+      "generateStoryFromSeed": {
+        "args": {
+          "projectId": "ID",
+          "textId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateStoryWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateStoryWithNotes": {
+        "args": {
+          "projectId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "createCharacterProfile": {
+    "type": "mutation",
+    "fields": {
+      "createCharacterProfile": {
+        "args": {
+          "characterOrderAfter": "Int",
+          "name": "String",
+          "projectId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "characterProfile"
+        ]
+      }
+    }
+  },
+  "reorderCharacter": {
+    "type": "mutation",
+    "fields": {
+      "reorderCharacter": {
+        "args": {
+          "newCharacterOrder": "Int",
+          "projectId": "ID",
+          "textId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "deleteCharacterByKey": {
+    "type": "mutation",
+    "fields": {
+      "deleteCharacterByKey": {
+        "args": {
+          "characterKey": "String",
+          "projectId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "rebaseCharacterProfile": {
+    "type": "mutation",
+    "fields": {
+      "rebaseCharacterProfile": {
+        "args": {
+          "characterKey": "String",
+          "characterProfileId": "ID",
+          "projectId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateCharacterVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateCharacterVersionLabel": {
+        "args": {
+          "characterKey": "String",
+          "characterProfileId": "ID",
+          "projectId": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateCharacterProfile": {
+    "type": "mutation",
+    "fields": {
+      "updateCharacterProfile": {
+        "args": {
+          "name": "String",
+          "projectId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String",
+          "textSeed": "String"
+        },
+        "returns": [
+          "characterProfile"
+        ]
+      }
+    }
+  },
+  "generateCharacterFromSeed": {
+    "type": "mutation",
+    "fields": {
+      "generateCharacterFromSeed": {
+        "args": {
+          "projectId": "ID",
+          "textId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateCharacterWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateCharacterWithNotes": {
+        "args": {
+          "projectId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "rebaseBeatSheet": {
+    "type": "mutation",
+    "fields": {
+      "rebaseBeatSheet": {
+        "args": {
+          "beatSheetId": "ID",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateBeatSheetVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateBeatSheetVersionLabel": {
+        "args": {
+          "beatSheetId": "ID",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateBeatSheet": {
+    "type": "mutation",
+    "fields": {
+      "updateBeatSheet": {
+        "args": {
+          "projectId": "ID",
+          "sceneTextId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "beatSheet"
+        ]
+      }
+    }
+  },
+  "generateBeatSheetFromScene": {
+    "type": "mutation",
+    "fields": {
+      "generateBeatSheetFromScene": {
+        "args": {
+          "authorStyleId": "ID",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "sceneTextId": "ID",
+          "screenplayFormat": "Boolean",
+          "scriptDialogFlavorId": "ID",
+          "styleGuidelineId": "ID",
+          "textId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateBeatSheetWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateBeatSheetWithNotes": {
+        "args": {
+          "authorStyleId": "ID",
+          "projectId": "ID",
+          "sceneKey": "ID",
+          "screenplayFormat": "Boolean",
+          "scriptDialogFlavorId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "styleGuidelineId": "ID",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "createSceneText": {
+    "type": "mutation",
+    "fields": {
+      "createSceneText": {
+        "args": {
+          "projectId": "ID",
+          "sceneOrderAfter": "Int",
+          "textSeed": "String",
+          "title": "String"
+        },
+        "returns": [
+          "sceneText"
+        ]
+      }
+    }
+  },
+  "reorderScene": {
+    "type": "mutation",
+    "fields": {
+      "reorderScene": {
+        "args": {
+          "newSceneOrder": "Int",
+          "projectId": "ID",
+          "textId": "ID"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "deleteSceneByKey": {
+    "type": "mutation",
+    "fields": {
+      "deleteSceneByKey": {
+        "args": {
+          "projectId": "ID",
+          "sceneKey": "String"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "rebaseSceneText": {
+    "type": "mutation",
+    "fields": {
+      "rebaseSceneText": {
+        "args": {
+          "projectId": "ID",
+          "sceneKey": "String",
+          "sceneTextId": "ID",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateSceneVersionLabel": {
+    "type": "mutation",
+    "fields": {
+      "updateSceneVersionLabel": {
+        "args": {
+          "projectId": "ID",
+          "sceneKey": "String",
+          "sceneTextId": "ID",
+          "versionLabel": "String",
+          "versionNumber": "Int"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  },
+  "updateSceneText": {
+    "type": "mutation",
+    "fields": {
+      "updateSceneText": {
+        "args": {
+          "projectId": "ID",
+          "textContent": "String",
+          "textId": "ID",
+          "textNotes": "String",
+          "textSeed": "String",
+          "title": "String"
+        },
+        "returns": [
+          "sceneText"
+        ]
+      }
+    }
+  },
+  "generateSceneFromSeed": {
+    "type": "mutation",
+    "fields": {
+      "generateSceneFromSeed": {
+        "args": {
+          "projectId": "ID",
+          "textId": "ID",
+          "textSeed": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateSceneWithNotes": {
+    "type": "mutation",
+    "fields": {
+      "generateSceneWithNotes": {
+        "args": {
+          "projectId": "ID",
+          "selectTextEnd": "Int",
+          "selectTextStart": "Int",
+          "textId": "ID",
+          "textNotes": "String"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "generateMakeScenes": {
+    "type": "mutation",
+    "fields": {
+      "generateMakeScenes": {
+        "args": {
+          "projectId": "ID",
+          "sceneCount": "Int",
+          "storyTextId": "ID"
+        },
+        "returns": [
+          "agentTaskId"
+        ]
+      }
+    }
+  },
+  "updatePlatformSetting": {
+    "type": "mutation",
+    "fields": {
+      "updatePlatformSetting": {
+        "args": {
+          "key": "String",
+          "value": "String"
+        },
+        "returns": [
+          "success"
+        ]
+      }
+    }
+  }
+}

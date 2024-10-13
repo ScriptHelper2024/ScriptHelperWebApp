@@ -1,0 +1,47 @@
+@import '../../styles/global.scss';
+
+.DateRangePicker {
+	position: relative;
+	z-index: 3;
+
+	.react-datepicker__year-read-view--down-arrow,
+	.react-datepicker__month-read-view--down-arrow,
+	.react-datepicker__month-year-read-view--down-arrow,
+	.react-datepicker__navigation-icon::before {
+		top: 13px;
+	}
+
+	.date-range-picker-fields {
+		display: inline-flex;
+		gap: 0.5em;
+
+		span {
+			display: block;
+		}
+		input {
+			width: 7em;
+		}
+
+		.react-datepicker__tab-loop {
+			margin: -0.25em;
+		}
+
+		.react-datepicker__input-container {
+			.react-datepicker__close-icon::after {
+				content: '\2715';
+				font-size: 7px;
+				font-family: Arial;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				width: 13px;
+				height: 13px;
+				padding-top: 3px;
+				border: 1px solid black;
+				background-color: transparent;
+				color: black;
+			}
+		}
+	}
+}

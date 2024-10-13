@@ -1,0 +1,11 @@
+@import '../../styles/global.scss';
+
+.RecordsTableRowLimit {
+	font-weight: bold;
+	input {
+		font-weight: normal;
+		text-align: right;
+		width: 2em;
+		padding: 2px 2px;
+	}
+}

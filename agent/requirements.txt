@@ -1,0 +1,6 @@
+pika
+python-dotenv
+openai
+tiktoken
+google-cloud-aiplatform
+anthropic

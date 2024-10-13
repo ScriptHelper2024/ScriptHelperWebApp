@@ -1,0 +1,17 @@
+@import '../../../styles/global.scss';
+
+.AgentTask {
+	.back-button {
+		margin: 1em;
+	}
+
+	.info-and-actions {
+		margin: 1em 0;
+	}
+
+	pre.json-output {
+		.json-string {
+			white-space: normal;
+		}
+	}
+}

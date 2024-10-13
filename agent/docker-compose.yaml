@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  sh-agent:
+    container_name: sh-agent
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/var/www/sh-agent
+    restart: always
+    networks:
+      - network_from_env
+
+networks:
+  network_from_env:
+    external:
+      name: ${NETWORK_NAME}

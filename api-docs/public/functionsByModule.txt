@@ -1,0 +1,194 @@
+Available GraphQL Schema by Module:
+
+Module: Admin
+  Query: listPlatformSettings
+  Query: platformSetting
+  Query: platformStatistics
+  Mutation: updatePlatformSetting
+
+Module: AgentTask
+  Query: agentTaskById
+  Query: agentTaskByIdForProject
+  Query: listAgentTasks
+  Query: listAgentTasksByProject
+  Mutation: deleteAgentTask
+  Mutation: resetAgentTask
+  Mutation: updateAgentTask
+
+Module: Auth
+  Mutation: finalizeSocialLogin
+  Mutation: login
+  Mutation: logout
+  Mutation: passwordReset
+  Mutation: passwordResetRequest
+  Mutation: sendEmailVerification
+  Mutation: socialLogin
+  Mutation: verifyEmail
+
+Module: AuthorStyle
+  Query: allAuthorStyles
+  Query: authorStyleById
+  Mutation: deleteAuthorStyle
+  Mutation: registerAuthorStyle
+  Mutation: updateAuthorStyle
+
+Module: BeatSheet
+  Query: getBeatSheet
+  Query: listBeatSheetVersions
+  Mutation: generateBeatSheetFromScene
+  Mutation: generateBeatSheetWithNotes
+  Mutation: rebaseBeatSheet
+  Mutation: updateBeatSheet
+  Mutation: updateBeatSheetVersionLabel
+
+Module: CharacterProfile
+  Query: getCharacterProfile
+  Query: listCharacterVersions
+  Query: listProjectCharacters
+  Mutation: createCharacterProfile
+  Mutation: deleteCharacterByKey
+  Mutation: generateCharacterFromSeed
+  Mutation: generateCharacterWithNotes
+  Mutation: rebaseCharacterProfile
+  Mutation: reorderCharacter
+  Mutation: updateCharacterProfile
+  Mutation: updateCharacterVersionLabel
+
+Module: Health
+  Query: healthCheck
+
+Module: Invoice
+  Query: allInvoices
+  Query: invoiceByEmail
+  Query: invoiceById
+  Query: invoiceByUser
+  Query: invoiceEvents
+  Query: invoicesBySubscriptionId
+  Query: upcomingInvoice
+  Mutation: updateInvoice
+
+Module: LocationProfile
+  Query: getLocationProfile
+  Query: listLocationVersions
+  Query: listProjectLocations
+  Mutation: createLocationProfile
+  Mutation: deleteLocationByKey
+  Mutation: generateLocationFromSeed
+  Mutation: generateLocationWithNotes
+  Mutation: rebaseLocationProfile
+  Mutation: reorderLocation
+  Mutation: updateLocationProfile
+  Mutation: updateLocationVersionLabel
+
+Module: MagicNote
+  Query: getMagicNoteCritic
+  Query: listMagicNoteCritics
+  Query: listMagicNoteCriticsByType
+  Mutation: createMagicNoteCritic
+  Mutation: deleteMagicNoteCritic
+  Mutation: generateExpansiveNotes
+  Mutation: generateMagicNotes
+  Mutation: updateMagicNoteCritic
+
+Module: Project
+  Query: collateProject
+  Query: projectById
+  Query: projects
+  Mutation: archiveProject
+  Mutation: cloneProject
+  Mutation: createProject
+  Mutation: restoreProject
+  Mutation: updateProject
+
+Module: PromptTemplate
+  Query: allPromptTemplates
+  Query: promptTemplateById
+  Mutation: deletePromptTemplate
+  Mutation: registerPromptTemplate
+  Mutation: updatePromptTemplate
+
+Module: SceneText
+  Query: getSceneText
+  Query: listProjectScenes
+  Query: listSceneVersions
+  Mutation: createSceneText
+  Mutation: deleteSceneByKey
+  Mutation: generateMakeScenes
+  Mutation: generateSceneFromSeed
+  Mutation: generateSceneWithNotes
+  Mutation: rebaseSceneText
+  Mutation: reorderScene
+  Mutation: updateSceneText
+  Mutation: updateSceneVersionLabel
+
+Module: ScriptDialogFlavor
+  Query: allScriptDialogFlavors
+  Query: scriptDialogFlavorById
+  Mutation: deleteScriptDialogFlavor
+  Mutation: registerScriptDialogFlavor
+  Mutation: updateScriptDialogFlavor
+
+Module: ScriptText
+  Query: getScriptText
+  Query: listScriptTextVersions
+  Mutation: generateScriptAndBeatSheet
+  Mutation: generateScriptTextFromScene
+  Mutation: generateScriptTextWithNotes
+  Mutation: rebaseScriptText
+  Mutation: updateScriptText
+  Mutation: updateScriptTextVersionLabel
+
+Module: StoryText
+  Query: getStoryText
+  Query: listStoryVersions
+  Mutation: generateStoryFromSeed
+  Mutation: generateStoryWithNotes
+  Mutation: rebaseStoryText
+  Mutation: updateStoryText
+  Mutation: updateStoryVersionLabel
+
+Module: StyleGuideline
+  Query: allStyleGuidelines
+  Query: styleGuidelineById
+  Mutation: deleteStyleGuideline
+  Mutation: registerStyleGuideline
+  Mutation: updateStyleGuideline
+
+Module: Subscription
+  Query: allSubscriptions
+  Query: setupIntentCard
+  Query: subscriptionByEmail
+  Query: subscriptionById
+  Query: subscriptionByUser
+  Query: subscriptionEvents
+  Query: subscriptionStatistics
+  Query: subscriptionTiers
+  Mutation: updatePaymentMethod
+  Mutation: updateSubscription
+
+Module: SuggestedStoryTitle
+  Query: getTitleSuggestionById
+  Query: listTitleSuggestions
+  Mutation: applyTitleSuggestion
+  Mutation: createTitleSuggestion
+  Mutation: deleteAllTitleSuggestions
+  Mutation: deleteTitleSuggestion
+  Mutation: generateTitleSuggestion
+
+Module: User
+  Query: allUsers
+  Query: me
+  Query: userByEmail
+  Query: userById
+  Mutation: deleteUser
+  Mutation: registerUser
+  Mutation: updateMe
+  Mutation: updateUser
+
+Module: UserPreference
+  Query: defaultLlmOptions
+  Query: myUserPreference
+  Query: userPreferenceByUserId
+  Mutation: updateMyUserPreference
+  Mutation: updateUserPreference
+

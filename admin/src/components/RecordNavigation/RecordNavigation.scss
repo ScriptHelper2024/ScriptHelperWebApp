@@ -1,0 +1,35 @@
+@import '../../styles/global.scss';
+
+.RecordNavigation {
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	margin: 1em 0;
+
+	button {
+		@include button-blank;
+		padding: 0;
+		line-height: 1;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 1.5em;
+		width: 1.5em;
+		border: 1px solid $theme-dark-color;
+		background-color: white;
+		border-radius: 0.25em;
+		.caret {
+			transform: scale(1.1);
+		}
+		&:hover {
+			background-color: $theme-dark-color-muted;
+			&:disabled {
+				background-color: transparent;
+			}
+		}
+		&:disabled {
+			opacity: 0.4;
+		}
+	}
+}

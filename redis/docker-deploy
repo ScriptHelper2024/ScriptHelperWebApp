@@ -1,0 +1,69 @@
+#!/bin/sh
+CONTAINER_NAME="shredis"
+BASE_IMAGE_NAME="redis:alpine"
+IMAGE_NAME="sh-redis-server:latest"
+NETWORK_NAME="sh-network"
+PORT_MAPPING="-p 6379:6379"
+
+# Get script location
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+echo "Script location: $SCRIPT_DIR"
+
+echo "Starting deployment of $CONTAINER_NAME..."
+
+# Remove the existing network if it exists, then create it
+echo "Removing existing network $NETWORK_NAME..."
+sudo docker network rm "$NETWORK_NAME"
+echo "Network $NETWORK_NAME removed."
+
+echo "Creating network $NETWORK_NAME..."
+sudo docker network create "$NETWORK_NAME"
+echo "Network $NETWORK_NAME created successfully."
+
+# Stop and remove any existing container with the same name
+echo "Removing any existing container named $CONTAINER_NAME..."
+if sudo docker rm -f "$CONTAINER_NAME"; then
+    echo "Existing container $CONTAINER_NAME removed."
+else
+    echo "No existing container named $CONTAINER_NAME found."
+fi
+
+# Check if the base image exists locally
+echo "Checking if base image $BASE_IMAGE_NAME exists locally..."
+if sudo docker image inspect "$BASE_IMAGE_NAME" >/dev/null 2>&1; then
+    echo "Base image $BASE_IMAGE_NAME already exists locally."
+else
+    # Pull the base image if it doesn't exist
+    echo "Pulling base image $BASE_IMAGE_NAME..."
+    if sudo docker pull "$BASE_IMAGE_NAME"; then
+        echo "Base image $BASE_IMAGE_NAME pulled successfully."
+    else
+        echo "Failed to pull base image $BASE_IMAGE_NAME."
+        exit 1
+    fi
+fi
+
+# Build the Docker image, if you have a Dockerfile and need a custom build
+echo "Building Docker image $IMAGE_NAME..."
+if sudo docker build -t "$IMAGE_NAME" "$SCRIPT_DIR"; then
+    echo "Docker image $IMAGE_NAME built successfully."
+else
+    echo "Failed to build Docker image $IMAGE_NAME."
+    exit 1
+fi
+
+# Run the new container and connect it to tsqr-network
+echo "Starting new container $CONTAINER_NAME..."
+NEW_CONTAINER_ID=$(sudo docker run -d --hostname "$CONTAINER_NAME" --name "$CONTAINER_NAME" --network "$NETWORK_NAME" $PORT_MAPPING "$IMAGE_NAME")
+
+# Check if the run command was successful before writing to container.id
+if [ $? -eq 0 ]; then
+    echo "$NEW_CONTAINER_ID" > container.id
+    echo "Container $CONTAINER_NAME started successfully with ID: $NEW_CONTAINER_ID"
+    echo "Container ID saved to container.id file."
+else
+    echo "Failed to start the container $CONTAINER_NAME."
+    exit 1
+fi
+
+echo "Deployment of $CONTAINER_NAME completed."

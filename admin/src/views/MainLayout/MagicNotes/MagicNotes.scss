@@ -1,0 +1,23 @@
+@import '../../../styles/global.scss';
+
+.MagicNotes {
+	.records-filter {
+		margin-bottom: 1em;
+		input[type='search'] {
+			width: 16em;
+		}
+	}
+	.RecordsTable {
+		table {
+			grid-template-columns:
+				auto auto auto minmax(6em, auto) auto minmax(3.5em, auto) minmax(
+					3.5em,
+					auto
+				)
+				3em !important;
+			tbody tr .actions {
+				text-align: right;
+			}
+		}
+	}
+}

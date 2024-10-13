@@ -1,0 +1,26 @@
+@import '../../../styles/global.scss';
+
+.AuthorStyles {
+	.records-filter {
+		input[type='text'] {
+			width: 13em;
+		}
+	}
+
+	.layout-row {
+		margin: 1em 0;
+	}
+
+	.RecordsTable {
+		table {
+			grid-template-columns:
+				auto minmax(10em, 1fr) auto auto auto minmax(5.5em, 1fr) minmax(5.5em, 1fr)
+				minmax(3em, auto) !important;
+			tbody tr {
+				.actions {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

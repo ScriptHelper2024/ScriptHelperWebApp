@@ -1,0 +1,20 @@
+@import '../../../styles/global.scss';
+
+.AgentTasks {
+	.aggregates {
+		margin: 1em 0;
+	}
+	.RecordsTable {
+		table {
+			grid-template-columns:
+				auto auto auto auto auto auto auto auto minmax(3.5em, auto) minmax(
+					5.5em,
+					auto
+				)
+				3.5em !important;
+			.actions {
+				text-align: right;
+			}
+		}
+	}
+}

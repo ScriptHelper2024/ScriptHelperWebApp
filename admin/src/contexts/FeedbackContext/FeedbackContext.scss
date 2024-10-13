@@ -1,0 +1,55 @@
+@import '../../styles/global.scss';
+
+.FeedbackContext {
+	pointer-events: none;
+	position: fixed;
+	z-index: 3;
+	height: 100vh;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	.feedback {
+		@include standard-box-shadow;
+		&.ERROR {
+			color: $theme-error-color;
+			border-color: rgba($theme-error-color, 0.3);
+		}
+		&.SUCCESS {
+			color: $theme-success-color;
+			border-color: rgba($theme-success-color, 0.3);
+		}
+		position: absolute;
+		margin: 0 auto;
+		box-sizing: border-box;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 1em 3em 1em 2em;
+		background-color: white;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 0.25em;
+		pointer-events: none;
+		opacity: 0;
+		bottom: -6em;
+		transition: 600ms;
+		&.show {
+			pointer-events: all;
+			opacity: 1;
+			bottom: 4em;
+		}
+		button.close {
+			@include button-blank;
+			cursor: pointer;
+			position: absolute;
+			right: 0.75em;
+			top: 0.5em;
+			color: inherit;
+			opacity: 0.9;
+			svg {
+				transform: scale(1.25);
+			}
+		}
+	}
+}

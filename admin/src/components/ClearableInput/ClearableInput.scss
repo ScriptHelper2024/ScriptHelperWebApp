@@ -1,0 +1,35 @@
+@import '../../styles/global.scss';
+
+.ClearableInput {
+	display: inline-block;
+
+	position: relative;
+
+	button {
+		@include button-blank;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 0 0.5em;
+
+		&:after {
+			content: '\2715';
+			font-size: 7px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			width: 13px;
+			height: 13px;
+			border: 1px solid $theme-dark-color;
+			background-color: transparent;
+			color: $theme-dark-color;
+		}
+	}
+	input {
+		padding-right: 1.5em;
+		box-sizing: border-box;
+	}
+}

@@ -1,0 +1,36 @@
+@import '../../styles/global.scss';
+
+.Login {
+	position: relative;
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	form {
+		width: 300px;
+		border: 1px solid $grey;
+		border-radius: 1em;
+		background-color: $off-white;
+		padding: 1em 2em;
+		.title {
+			font-size: 1.5em;
+			margin: 0;
+		}
+		label {
+			display: block;
+			margin: 0.5em 0;
+			span {
+				display: block;
+			}
+			input {
+				width: 100%;
+			}
+		}
+		button {
+			margin: 0.5em 0;
+			font-size: 1.25em;
+			width: 100%;
+		}
+	}
+}
